@@ -1,0 +1,67 @@
+/** Styling for the Navigation Bar **/
+.navbar{
+    border: solid;
+    height: 80px;
+}
+.nav-option, .personal-logo, .jump-links, .social-icons, .game-btn{
+    display: inline;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.game-btn, .social-icons, .jump-links{
+    float: right
+}
+.personal-logo{
+    border: solid;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+
+.btn-text{
+    padding: 10px;
+}
+
+.game-btn{
+    height: 50px;
+    margin: 15px 10px 0px 10px;
+    border: solid;
+    border-color: gray;
+    background-color: transparent;
+    color: gray;
+}
+
+.nav-option > img{ /** Resizing the Social Media Icons **/
+    width: 30px;
+    height: 30px
+}
+.social-icons{
+    margin-top: 25px;
+}
+.jump-links{
+    font-size: 14px;
+    margin-top: 30px;
+}
+.nav-option{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/** Styling for the Main Content of Page **/
+.content{
+    border: solid;
+    display: block;
+}
+.intro-block{
+    display: inline-flex;
+    border: solid red;
+    padding: 10px;
+}
+/** Styling for the Introduction Block **/
+.intro-left, .intro-right{
+    width: 50%;
+    margin-top: 50px;
+}
+
+.h1-box{
+    border: solid
+}
