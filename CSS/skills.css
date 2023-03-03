@@ -1,0 +1,55 @@
+.skills{
+    border: solid blue;
+    display: flex;
+    justify-content: center;
+}
+.skills-background{
+    border: solid brown;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    
+}
+.skills-container{
+    border:solid orange;
+    width: 90%;
+    margin: 20px;
+}
+.skill-title, .skill-description{
+    margin: 10px;
+}
+.skill-title, .skill-description{
+    margin: 20px;
+}
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.card{
+    border-radius: 10px;
+    background-color: gray;
+}
+.level-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    background-color:purple;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}    
+.skill-level{
+    border: solid;
+
+    margin-bottom: 40px;
+}
+.connect{
+    margin: 10px;
+}
