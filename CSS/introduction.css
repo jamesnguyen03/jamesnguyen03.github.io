@@ -20,6 +20,9 @@
 .btn-text{
     padding: 10px;
 }
+#home-connect{
+    margin-bottom: 40px;
+}
 
 .game-btn{
     height: 50px;
@@ -39,7 +42,6 @@
 }
 .jump-links{
     font-size: 14px;
-    margin-top: 30px;
 }
 .nav-option{
     margin-left: 5px;
@@ -63,44 +65,12 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+.nav-item{
+    display: inline-flex;
+    height: 100%;
+}
 
 .h1-box{
     border: solid
 }
-/** Styling for the Introduction Block **/
-.skills-block{
-    border: solid;
-    text-align: center;
-}
 
-.skills-scroll, .skills-button{
-    margin: 0px;
-    padding: 0px;
-}
-
-.skills-scroll{
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    display: inline-block;
-    width: 80%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-.skills-scroll::-webkit-scrollbar{
-    display: none;
-}
-.skills-button{
-    display: inline-block;
-    width: 8%;
-    height: 100%;   
-}
-.skills-card{
-    display: inline-block;
-    width: 80%;
-    text-align: center;
-    border: solid purple;
-    margin-left: 10%;
-    margin-right: 10%;
-}

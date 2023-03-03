@@ -4,7 +4,7 @@ var swiper = new Swiper(".mySwiper", {
     loop: true,
     loopFillGroupWithBlank: true,
     autoplay: {
-        delay: 2500,
+        delay: 5000,
         disableOnInteraction: false
       },    
     pagination: {
@@ -19,7 +19,7 @@ var swiper = new Swiper(".mySwiper", {
         0: {
             slidesPerView: 1
         },
-        520: {
+        700: {
             slidesPerView: 2
         },      
     },
