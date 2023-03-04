@@ -1,5 +1,56 @@
-p, h1, h2, h3{
+p, h1, h2, h3, h5, h5{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/** Styling for the Navigation Bar **/
+.navbar{
+    border: solid;
+    height: 80px;
+}
+.nav-option, .personal-logo, .jump-links, .social-icons, .game-btn{
+    display: inline;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.game-btn, .social-icons, .jump-links{
+    float: right
+}
+.personal-logo{
+    border: solid;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+
+.btn-text{
+    padding: 10px;
+}
+#home-connect{
+    margin-bottom: 40px;
+}
+
+.game-btn{
+    height: 50px;
+    margin: 15px 10px 0px 10px;
+    border: solid 2px;
+    border-color: black;
+    background-color: transparent;
+    color: black;
+    border-radius: 10px;
+}
+
+.nav-option > img{ /** Resizing the Social Media Icons **/
+    width: 30px;
+    height: 30px
+}
+.social-icons{
+    margin-top: 25px;
+}
+.jump-links{
+    font-size: 14px;
+}
+.nav-option{
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 /** Navigation Button Animations **/
@@ -9,16 +60,19 @@ p, h1, h2, h3{
 
 .bounce:hover{
     animation-name: bounce;
-    animation-iteration-count: infinite;
-    color: purple;
-    transition-duration: 1s;
+    animation-iteration-count: 1;
 }
 
-.nav-option > img:hover{
+.nav-option > img:hover{ /** animation for social-icons **/
     animation-name: spin;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
 }
 
+.jiggle:hover{
+    animation-name: jiggle;
+    animation-iteration-count: 1;
+    animation-duration: 0.3s;
+}
 
 @keyframes bounce{
     0%, 20%, 50%, 80%, 100%{
@@ -41,4 +95,19 @@ p, h1, h2, h3{
         transform: rotate(360deg);
         transform-origin: center;
     }
+}
+
+@keyframes jiggle{
+    0%, 50%, 100%{
+        transform: rotate(0deg);
+        transform-origin: center;
+    }
+    25%{
+        transform: rotate(-5deg);
+        transform-origin: center;
+    }    
+    75%{
+        transform: rotate(5deg);
+        transform-origin: center;
+    }            
 }

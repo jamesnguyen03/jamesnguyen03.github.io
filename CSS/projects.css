@@ -1,0 +1,61 @@
+.projects{
+    border: solid green;
+}
+
+.project-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid red;
+}
+#project-title, #project-description{
+    margin: 5px;
+}
+#project-title{
+    margin-top: 30px;
+}
+.project-tabs{
+    margin: 20px;
+    width: 70%;
+    border: solid;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+}
+li{
+    list-style: none;
+}
+.project-selection{
+    flex-grow: 1;
+    text-align: center;
+    padding: 5px
+}
+.selection-overlay{
+    position: absolute;
+    z-index: -1;
+    background-color: red;
+}
+.project-body{
+    align-items: center;
+    border: solid pink;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1em
+}
+.project-card-wrapper{
+    text-align: center;
+    flex-basis: 30%;
+    border: solid;
+    display:flex;
+    justify-content: center;
+}
+.technology-card{
+    width: 100%;
+    aspect-ratio: 3/4;
+    background-color: gray;
+    border-radius: 10px;
+}
+#project-break{
+    width: 50%;
+}
