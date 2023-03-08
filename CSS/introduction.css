@@ -9,18 +9,48 @@
     padding: 10px;
 }
 /** Styling for the Introduction Block **/
+.name-title{
+    margin-top: 6px;
+}
 .intro-left, .intro-right{
     width: 50%;
     margin-top: 50px;
     margin-left: 10px;
     margin-right: 10px;
 }
+
 .nav-item{
     display: inline-flex;
     height: 100%;
 }
 
 .h1-box{
-    border: solid
+    border: solid;
 }
 
+/** For rotating traits text **/
+.trait-list{
+    display: inline;
+    border: solid transparent;
+}
+
+.trait{
+    position: absolute;
+    display: flex;
+    opacity: 0;
+    color: gray;
+}
+
+.trait .letter {
+    transform-origin: center center 25px;
+}
+.trait .letter.out {
+    transform: rotateX(90deg);
+    transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+}
+.trait .letter.in {
+    transition: 0.38s ease;
+}
+.trait .letter.behind {
+    transform: rotateX(-90deg);
+}

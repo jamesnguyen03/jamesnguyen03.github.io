@@ -33,6 +33,7 @@
 .card{
     border-radius: 10px;
     background-color: gray;
+    width: 80%;
 }
 .level-wrapper{
     position: relative;
@@ -53,4 +54,10 @@
 }
 .connect{
     margin: 10px;
+}
+
+.slide-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

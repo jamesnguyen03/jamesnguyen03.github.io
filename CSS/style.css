@@ -1,11 +1,15 @@
 p, h1, h2, h3, h5, h5{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: sans-serif;
 }
 
+body{
+    margin: 0px;
+}
 /** Styling for the Navigation Bar **/
 .navbar{
     border: solid;
     height: 80px;
+    width: 100%;
 }
 .nav-option, .personal-logo, .jump-links, .social-icons, .game-btn{
     display: inline;

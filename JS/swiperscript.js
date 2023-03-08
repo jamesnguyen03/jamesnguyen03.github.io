@@ -1,6 +1,6 @@
 
 var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 20,
+    spaceBetween: 0,
     loop: true,
     loopFillGroupWithBlank: true,
     autoplay: {

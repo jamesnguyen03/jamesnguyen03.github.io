@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="CSS/swiper-bundle.min.css">    
         <!--Introduction CSS-->
         <link rel="stylesheet" href="CSS/introduction.css">
-        <script src="JS/script.js"></script>
         <!--Skills CSS-->
         <link rel="stylesheet" href="CSS/skills.css">
         <!--Projects CSS-->
@@ -36,11 +35,15 @@
     <body>
         <div class="intro-block">
             <div class="intro-left">
-                <div>
-                    <span class="h1-box">The Sountrack to My Life</span>
+                <div class="rotating-traits">
+                    <h3 class="trait-list">
+                        <span class="trait t-1">Driven</span>
+                        <span class="trait t-2">Determined</span>
+                        <span class="trait t-3">Pragmatic</span>
+                        <span class="trait t-4">Organized</span>
+                    </h3>
                 </div>
-                <h1>What's up? I'm James!</h1>
-                <h3>[Animated Skills / Characteristics]</h3>
+                <h1 class="name-title">What's up? I'm James!</h1>
                 <p>Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris. </p>
                 <button id="home-connect">Connect with me!</button>
             </div>
@@ -55,7 +58,7 @@
                 <div class="skills-container">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <div class="slide-wrapper swiper-slide">
                             <div class="card swiper-slide">
                                 <div class="card-content">
                                     <div class="level-wrapper">
@@ -68,7 +71,7 @@
                                 </div>
                             </div>                  
                         </div>
-                        <div class="swiper-slide">
+                        <div class="slide-wrapper swiper-slide">
                             <div class="card swiper-slide">
                                 <div class="card-content">
                                     <div class="level-wrapper">
@@ -81,7 +84,7 @@
                                 </div>
                             </div>                          
                         </div>
-                        <div class="swiper-slide">
+                        <div class="slide-wrapper swiper-slide">
                             <div class="card swiper-slide">
                                 <div class="card-content">
                                     <div class="level-wrapper">
@@ -94,8 +97,8 @@
                                 </div>
                             </div>                          
                         </div>
-                        <div class="swiper-slide">Slide 8</div>
-                        <div class="swiper-slide">Slide 9</div>
+                        <div class="slide-wrapper swiper-slide">Slide 8</div>
+                        <div class="slide-wrapper swiper-slide">Slide 9</div>
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
@@ -143,6 +146,7 @@
             </div>
         </div>
     </body>
+    <script src="JS/script.js"></script>
     <script src="JS/swiper-bundle.min.js"></script>
     <script src="JS/swiperscript.js"></script>           
 </html>
