@@ -37,3 +37,48 @@ let rotateText = () => {
 
 rotateText();
 setInterval(rotateText, 4000);
+
+let projectTitles = document.querySelectorAll(".project-title");
+let parentRect = projectTitles[0].parentElement.getBoundingClientRect();
+let selection = document.getElementById("selection-overlay");
+selection.style.height = parentRect.height + "px";
+selection.style.width = parentRect.width + "px";
+selection.style.left = "0px";
+let currElem;
+
+let projectScenes = document.querySelectorAll(".project-scene");
+let currProjectScene = projectScenes[0];
+currProjectScene.style.display = "flex";
+projectTitles.forEach((elem, i) => {
+  elem.onclick = function() {
+    console.log(currProjectScene);
+    currProjectScene.style.display = "none";
+    currProjectScene = projectScenes[i];
+
+    currProjectScene.style.display = "flex";
+
+    currElem = elem;
+    let parent = elem.parentElement;
+    let b = parent.getBoundingClientRect();
+    let h = b.height, w = b.width;
+    let x = parent.offsetLeft;
+
+    let selection = document.getElementById("selection-overlay");
+    selection.style.height = h + "px";
+    selection.style.width = w + "px";
+    selection.style.left = x + "px";
+  };
+});
+
+window.onresize = function(){
+  let parent = currElem.parentElement;
+  let b = parent.getBoundingClientRect();
+  let h = b.height, w = b.width;
+  let x = parent.offsetLeft;
+
+  let selection = document.getElementById("selection-overlay");
+  selection.style.height = h + "px";
+  selection.style.width = w + "px";
+  selection.style.left = x + "px";  
+};
+

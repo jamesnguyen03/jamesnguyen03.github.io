@@ -15,9 +15,10 @@
     margin-top: 30px;
 }
 .project-tabs{
+    position: relative;
     margin: 20px;
-    width: 70%;
-    border: solid;
+    width: 80%;
+    box-shadow: 1px 1px 10px 0px #888888;
     display: flex;
     align-items: center;
     border-radius: 15px;
@@ -28,20 +29,29 @@ li{
 .project-selection{
     flex-grow: 1;
     text-align: center;
-    padding: 5px
+    padding: 5px;
+    z-index: 1;
+}
+.project-title{
+    cursor: pointer;
 }
 .selection-overlay{
     position: absolute;
-    z-index: -1;
-    background-color: red;
+    background-color: gray;
+    border-radius: 15px;
+    transition-duration:0.6s;
+    transition-timing-function: cubic-bezier(0.68, -0.30, 0.265, 1.30);   
 }
 .project-body{
+    display: block;
+}
+.project-scene{
     align-items: center;
     border: solid pink;
-    display: flex;
+    display: none;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 1em
+    gap: 1em;
 }
 .project-card-wrapper{
     text-align: center;
