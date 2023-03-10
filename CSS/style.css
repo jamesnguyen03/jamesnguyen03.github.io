@@ -1,7 +1,10 @@
 p, h1, h2, h3, h5, h5{
     font-family: sans-serif;
+    user-select: none;
 }
-
+li{
+    list-style: none;
+}
 body{
     margin: 0px;
 }
@@ -10,6 +13,13 @@ body{
     border: solid;
     height: 80px;
     width: 100%;
+}
+.nav-option, .nav-option > img, .game-btn{
+    cursor: pointer;
+}
+.nav-item{
+    display: inline-flex;
+    height: 100%;
 }
 .nav-option, .personal-logo, .jump-links, .social-icons, .game-btn{
     display: inline;

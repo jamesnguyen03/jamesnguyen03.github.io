@@ -8,7 +8,7 @@
     align-items: center;
     border: solid red;
 }
-#project-title, #project-description{
+#project-title, #project-intro{
     margin: 5px;
 }
 #project-title{
@@ -23,14 +23,15 @@
     align-items: center;
     border-radius: 15px;
 }
-li{
-    list-style: none;
-}
 .project-selection{
     flex-grow: 1;
     text-align: center;
     padding: 5px;
     z-index: 1;
+}
+.project-head{
+    text-align: center;
+    display: none;
 }
 .project-title{
     cursor: pointer;
@@ -44,6 +45,7 @@ li{
 }
 .project-body{
     display: block;
+    width: 100%;
 }
 .project-scene{
     align-items: center;
@@ -52,6 +54,7 @@ li{
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 1em;
+    
 }
 .project-card-wrapper{
     text-align: center;
@@ -59,8 +62,11 @@ li{
     border: solid;
     display:flex;
     justify-content: center;
+    min-width: 300px;
+    margin: 20px;
 }
 .technology-card{
+    max-width: 400px;
     width: 100%;
     aspect-ratio: 3/4;
     background-color: gray;
@@ -68,4 +74,22 @@ li{
 }
 #project-break{
     width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+
+    .project-scene{
+        border: solid pink;
+        display: none;
+        flex-wrap: nowrap;
+        overflow: auto;
+        max-width: 100%;
+        justify-content:left;
+    }  
+    .project-scene::-webkit-scrollbar{
+        display: none;
+    }
 }
