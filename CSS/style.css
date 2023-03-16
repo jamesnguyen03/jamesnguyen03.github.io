@@ -1,18 +1,27 @@
-p, h1, h2, h3, h5, h5{
+h1, h2, h3, h5, h5{
     font-family: sans-serif;
     user-select: none;
+    color: #e6c251;
 }
+p{
+    font-family: sans-serif;
+    color: white;
+}
+
 li{
     list-style: none;
+    color: white;
 }
 body{
     margin: 0px;
+    background-color: #252525;
 }
 /** Styling for the Navigation Bar **/
 .navbar{
-    border: solid;
     height: 80px;
     width: 100%;
+    background-color: #0e0e0e;
+    box-shadow: 1px 1px 10px 0px black;
 }
 .nav-option, .nav-option > img, .game-btn{
     cursor: pointer;
@@ -29,10 +38,8 @@ body{
     float: right
 }
 .personal-logo{
-    border: solid;
     height: 50px;
-    width: 50px;
-    margin: 10px;
+    margin: 15px;
 }
 
 .btn-text{
@@ -46,9 +53,9 @@ body{
     height: 50px;
     margin: 15px 10px 0px 10px;
     border: solid 2px;
-    border-color: black;
+    border-color: #e6c251;
     background-color: transparent;
-    color: black;
+    color: #e7b42b;
     border-radius: 10px;
 }
 

@@ -1,21 +1,18 @@
 .skills{
-    border: solid blue;
     display: flex;
     justify-content: center;
 }
 .skills-background{
-    border: solid brown;
     display: flex;
     justify-content: center;
     width: 90%;
     margin: 20px;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #313131;
     box-shadow: 1px 1px 10px 0px black;
     
 }
 .skills-container{
-    border:solid orange;
     width: 90%;
     margin: 20px;
 }
@@ -42,7 +39,7 @@
     align-items: center;
 
     width: 100%;
-    background-color:purple;
+    background-color:#545353;
     border-radius: 10px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;

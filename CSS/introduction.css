@@ -1,16 +1,16 @@
 /** Styling for the Main Content of Page **/
 .content{
-    border: solid;
     display: block;
 }
 .intro-block{
     display: inline-flex;
-    border: solid red;
     padding: 10px;
+    min-height: 600px;
 }
 /** Styling for the Introduction Block **/
 .name-title{
     margin-top: 6px;
+    color: white;
 }
 .intro-left, .intro-right{
     width: 50%;
@@ -33,7 +33,7 @@
     position: absolute;
     display: flex;
     opacity: 0;
-    color: gray;
+    color: #e6c251;
 }
 
 .trait .letter {
