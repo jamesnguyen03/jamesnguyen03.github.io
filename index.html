@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <title>James Nguyen's Online Portfolio</title>
         <!--Style-->
         <link rel="stylesheet" href="CSS/style.css">
         <!--Swiper-->
@@ -14,28 +16,27 @@
         <!--Projects CSS-->
         <link rel="stylesheet" href="CSS/projects.css">     
         <!--Work CSS-->
-        <link rel="stylesheet" href="CSS/work.css">                   
-
-
-        <div class="navbar">
-            <img class="personal-logo" src="Image Assets/White Version.svg" alt="logo here">
-            <button class="jiggle game-btn"><span class="btn-text">Interactive Resume</span></button>
-            <ul class="social-icons">
-                <li class="nav-option" href=""><img class="animate spin" src="Image Assets/linkedin.png"alt="LinkedIn"></li>
-                <li class="nav-option" href=""><img class="animate spin" src="Image Assets/github.png" alt="GitHub"></li>
-                <li class="nav-option" href=""><img class="animate spin" src="Image Assets/email.png" alt="Email"></li>   
-            </ul>       
-            <ul class="jump-links">
-                <div class="animate bounce nav-item"><li class="nav-option" href=""><h4>Home</h4></li></div>
-                <div class="animate bounce nav-item"><li class="nav-option" href=""><h4>Skills</h4></li></div>
-                <div class="animate bounce nav-item"><li class="nav-option" href=""><h4>Projects</h4></li></div>
-                <div class="animate bounce nav-item"><li class="nav-option" href=""><h4>Experience</h4></li></div>
-            </ul>
-        </div>             
-    </head>
+        <link rel="stylesheet" href="CSS/work.css">                      
+    </head>          
 
     <body>
-        <div class="intro-block">
+        <div class="navbar">
+            <img class="personal-logo" src="ImageAssets/WhiteVersion.svg" alt="logo here">
+            <button class="jiggle game-btn"><span class="btn-text">Interactive Resume</span></button>
+            <ul class="social-icons">
+                <li class="nb nav-option"><img class="animate spin" src="ImageAssets/linkedin.png" alt="LinkedIn"></li>
+                <li class="nb nav-option"><img class="animate spin" src="ImageAssets/github.png" alt="GitHub"></li>
+                <li class="nb nav-option"><img class="animate spin" src="ImageAssets/email.png" alt="Email"></li>   
+            </ul>       
+            <ul class="jump-links">
+                <li class="nb nav-option"><a href="#intro"><div class="animate bounce nav-item"><h4>Home</h4></div></a></li>
+                <li class="nb nav-option"><a href="#skills"><div class="animate bounce nav-item"><h4>Skills</h4></div></a></li>
+                <li class="nb nav-option"><a href="#projects"><div class="animate bounce nav-item"><h4>Projects</h4></div></a></li>
+                <li class="nb nav-option"><a href="#work"><div class="animate bounce nav-item"><h4>Work</h4></div></a></li>
+            </ul>
+        </div>      
+
+        <div class="intro-block" id="intro">
             <div class="intro-left">
                 <div class="rotating-traits">
                     <h3 class="trait-list">
@@ -55,7 +56,7 @@
             </div>
         </div>
 
-        <div class="skills">
+        <div class="skills" id="skills">
             <div class="skills-background">
                 <div class="skills-container">
                     <div class="swiper mySwiper">
@@ -110,16 +111,16 @@
             </div>
         </div>
 
-        <div class="projects">
+        <div class="projects" id="projects">
             <div class="project-wrapper">
                 <h1 id="project-title">Projects</h1>
                 <p id="project-intro">Have a peek at some of my independent projects!</p>
-                <div class="project-tabs">
-                    <li class="project-selection" href=""><span class="project-title">Project 1</span></li>
-                    <li class="project-selection" href=""><span class="project-title">Project 2</span></li>
-                    <li class="project-selection"href=""><span class="project-title">Project 3</span></li>
-                    <div class="selection-overlay" id="selection-overlay"></div>
-                </div>
+                <ul class="project-list">
+                    <li class="nb"><div class="selection-overlay" id="selection-overlay"></div></li>
+                    <li class="nb project-selection"><span class="project-title">Project 1</span></li>
+                    <li class="nb project-selection"><span class="project-title">Project 2</span></li>
+                    <li class="nb project-selection"><span class="project-title">Project 3</span></li>
+                </ul>
                 <div class="project-head">
                     <h2 class="project-name">Web Automation Bots</h2>
                     <p class="project-desc">This series of series of items...</p>
@@ -204,49 +205,58 @@
             </div>
         </div>
 
-        <div class="work">
+        <div class="work" id="work">
             <div class="work-whiteboard">
                 <div class="work-header">
                     <h1 class="work-title">Work Experience</h1>
                     <p class="work-intro">Have a look at some of the details of my professional work!</p>
                     <div class="work-selector">
                         <div class="work-overlay" id="work-overlay"></div>
-                        <li class="work-option"><img src="Image Assets/linkedin.png"alt="LinkedIn"></li>
-                        <li class="work-option"><img src="Image Assets/github.png" alt="GitHub"></li>
-                        <li class="work-option"><img src="Image Assets/email.png" alt="Email"></li>                     
+                        <ul class="work-list">
+                            <li class="nb work-option"><img src="ImageAssets/WD.png" alt="Weisser Distributing"></li>
+                            <li class="nb work-option"><img src="ImageAssets/FCGoods.png" alt="FC Goods"></li>
+                        </ul>
                     </div>                    
                 </div>
                 <hr id="work-break">
                 <div class="work-card-wrapper">
                     <div class="work-card">
-                        <h3 class="work-name">Weisser Distributing</h3>
-                        <p class="work-date">10/30/1999</p>
-                        <h3 class="work-desc">Description 1</h3>
-                        <p>Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris.</p>
-                        <p>Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris.</p>
-                        <p>Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris.</p>
+                        <h1 class="work-name">Weisser Distributing</h1>
+                        <h3 class="work-role">Digital Marketing & Web Support Specialist</h3>
+                        <p class="work-date">June 2022 — Present (Full-Time)</p>
+                        <h3 class="work-details">Description</h3>
+                        <p>Weisser Distributing is a warehousing company that provides fullfilment services for dozens of marketplaces like Amazon, eBay, Walmart, and more.</p>
+                        <div class="responsibilities">
+                            <h3 class="work-resp">Duties & Responsibilities</h3>
+                            <p class="grayed">Weisser Distributing is the parent company of FC Goods, the online storefront I was initially hired for. As I transitioned from an intern, to part-time, to full-time, I was given responsibilities in the parent company in addition to my already existing responsibilities.</p>
+                            <ul>
+                                <li class="work-bullet">Analyzed weekly performance metrics to determine appropriate advertising adjustments</li>
+                                <li class="work-bullet">Adjusted advertising campaigns in order to reach target ROAS, ACoS, and other key metric goals</li>
+                                <li class="work-bullet">Conducted market research of competing products to determine whether pricing, content, or other product adjustments would be required to stimulate sales</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="work-card">
-                        <h3 class="work-name">FC Goods</h3>
-                        <p class="work-date">10/30/1999</p>
-                        <h3 class="work-desc">Description 2</h3>
-                        <p>Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris.</p>
-                        <p>Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris.</p>
-                        <p>Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris.</p>
-                    </div>
-                    <div class="work-card">
-                        <h3 class="work-name">Hyvee</h3>
-                        <p class="work-date">10/30/1999</p>
-                        <h3 class="work-desc">Description 3</h3>
-                        <p>Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris.</p>
-                        <p>Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris.</p>
-                        <p>Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris.</p>
-                    </div>                                        
+                        <h1 class="work-name">Fielder's Choice Goods</h1>
+                        <h3 class="work-role">General Intern</h3>
+                        <p class="work-date">May 2021 — June 2022 (Internship / Part-Time)</p>
+                        <h3 class="work-details">Description</h3>
+                        <p>Fielder's Choice Goods (FC Goods) is an online storefront that handcrafts and delivers one-of-a-kind leather accessories made from repurposed vintage baseball glove leather.</p>
+                        <div class="responsibilities">
+                            <h3 class="work-resp">Duties & Responsibilities</h3>
+                            <ul>
+                                <li class="work-bullet">Analyzed weekly performance metrics to determine appropriate advertising adjustments</li>
+                                <li class="work-bullet">Adjusted advertising campaigns in order to reach target ROAS, ACoS, and other key metric goals</li>
+                                <li class="work-bullet">Conducted market research of competing products to determine whether pricing, content, or other product adjustments would be required to stimulate sales</li>
+                            </ul>
+                        </div>
+                    </div>                              
                 </div>
             </div>
         </div>
-    </body>
-    <script src="JS/script.js"></script>
-    <script src="JS/swiper-bundle.min.js"></script>
-    <script src="JS/swiperscript.js"></script>           
+
+        <script src="JS/script.js"></script>
+        <script src="JS/swiper-bundle.min.js"></script>
+        <script src="JS/swiperscript.js"></script>         
+    </body>      
 </html>

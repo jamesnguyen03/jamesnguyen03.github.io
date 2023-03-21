@@ -43,4 +43,32 @@
 }
 .work-card::-webkit-scrollbar {
     display: none;
-  }
+}
+.work-name{
+    text-align: center;
+}
+
+.work-date{
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+}
+.responsibilities > .grayed{
+    font-size: 1px;
+    padding: 0px;
+    margin: 0px;    
+}
+
+.work-role, .work-resp{
+    margin-bottom: 5px;
+}
+.work-bullet{
+    font-family: sans-serif;
+    color: white;
+    margin-bottom: 10px;
+}
+.work-list{
+    display: inline-flex;
+    margin: 0px;
+    padding: 0px;
+}

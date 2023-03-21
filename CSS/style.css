@@ -1,20 +1,32 @@
+html {
+	scroll-behavior: smooth;
+}
 h1, h2, h3, h5, h5{
     font-family: sans-serif;
     user-select: none;
     color: #e6c251;
+    background: -webkit-linear-gradient(#e6c251, #977503);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
 }
 p{
     font-family: sans-serif;
     color: white;
 }
 
-li{
+li.nb, a{
+    text-decoration: none;
     list-style: none;
     color: white;
 }
+
 body{
     margin: 0px;
     background-color: #252525;
+}
+
+.grayed{
+    color: rgb(153, 153, 153);
 }
 /** Styling for the Navigation Bar **/
 .navbar{
