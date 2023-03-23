@@ -27,13 +27,15 @@
 .trait-list{
     display: inline;
     border: solid transparent;
+    font-family: sans-serif;
+    font-size: 15px;
 }
 
 .trait{
     position: absolute;
     display: flex;
     opacity: 0;
-    color: #e6c251;
+    color: white;
 }
 
 .trait .letter {
@@ -48,4 +50,40 @@
 }
 .trait .letter.behind {
     transform: rotateX(-90deg);
+}
+.vid-container{
+    width: 92%;
+    aspect-ratio: 1/1;
+    box-shadow: inset 1px 5px 40px 0px rgb(15, 15, 15);
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background: 
+    linear-gradient(to top left,
+        rgba(192, 158, 6, 0.205) 0%,
+        rgba(0, 0, 0, 0.836) calc(50% - 0.8px),
+        rgb(0, 0, 0) 50%,
+        rgba(0, 0, 0, 0) calc(50% + 0.8px),
+        rgba(192, 158, 6, 0.075) 100%),
+    linear-gradient(to top right,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0) calc(50% - 0.8px),
+        rgba(0,0,0,1) 50%,
+        rgba(0,0,0,0) calc(50% + 0.8px),
+        rgba(0,0,0,0) 100%);    
+}
+video{
+    width: 85%;
+}
+video::-webkit-media-controls {
+    display: none;
+  }
+.window{
+    box-shadow: 1px 5px 20px 0px rgb(15, 15, 15);
+    display: flex;
+    aspect-ratio: 1/1;    
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
