@@ -1,5 +1,6 @@
 "use strict";
 initTraits();
+initSkills();
 initProjectStart();
 initWorkStart();
 
@@ -44,6 +45,45 @@ function initTraits(){
   rotateText();
   setInterval(rotateText, 4000);
 }
+
+function initSkills(){
+  let levelWrappers = document.querySelectorAll(".level-wrapper");
+  let view = document.querySelector(".swiper-wrapper");
+  
+  var lastClick = 0;
+  var delay = 1000;  
+  function doAction() {
+    if (lastClick >= (Date.now() - delay))
+      return;
+    lastClick = Date.now();
+    console.log("Hello!");
+  } 
+
+  let observer = new MutationObserver(mutationRecords => {
+    doAction();
+  });
+  // observe everything except attributes
+  observer.observe(view, {
+    attributes: true,
+  });
+
+
+  view.onscroll = function(){
+    console.log("scroll=" + view.getBoundingClientRect().left);
+  }
+
+
+  levelWrappers.forEach((level) => {
+    checkInView(view, level);
+  });
+
+};
+
+function checkInView(view, elem){
+  console.log("view=" + view.getBoundingClientRect().x)
+  console.log(elem.getBoundingClientRect().x);
+};
+
 
 function initProjectStart(){
   /**intiializes the start states for items in the Project Block */
