@@ -1,8 +1,8 @@
 
 var swiper = new Swiper(".mySwiper", {
     spaceBetween: 0,
-    loop: true,
-    loopFillGroupWithBlank: true,
+    loop: false,
+    loopFillGroupWithBlank: false,
     autoplay: {
         delay: 5000,
         disableOnInteraction: false

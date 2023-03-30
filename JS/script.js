@@ -1,8 +1,16 @@
 "use strict";
+let resizeOverlay; //initializing blank function
+let resizeScroll; //initializing blank function
 initTraits();
 initSkills();
 initProjectStart();
 initWorkStart();
+
+window.onresize = function(){
+  resizeOverlay();
+  resizeScroll();
+}
+
 
  /**Animates the Traits Falling In/Out */
 function initTraits(){
@@ -47,43 +55,109 @@ function initTraits(){
 }
 
 function initSkills(){
+  let skillScroll = document.querySelector(".skills-container");
+  scrollOnGrab(skillScroll);
+
   let levelWrappers = document.querySelectorAll(".level-wrapper");
-  let view = document.querySelector(".swiper-wrapper");
-  
-  var lastClick = 0;
-  var delay = 1000;  
-  function doAction() {
-    if (lastClick >= (Date.now() - delay))
-      return;
-    lastClick = Date.now();
-    console.log("Hello!");
-  } 
+  levelWrappers.forEach((levelWrapper, i) =>{
 
-  let observer = new MutationObserver(mutationRecords => {
-    doAction();
-  });
-  // observe everything except attributes
-  observer.observe(view, {
-    attributes: true,
   });
 
+  let rightBound = Math.floor(skillScroll.scrollWidth - skillScroll.getBoundingClientRect().width);
+  let reverse = false;
+  let autoScroll = initAutoScroll();
+  function initAutoScroll(){
+    let auto = setInterval(function(){
+      if(skillScroll.scrollLeft == rightBound) reverse = true;
+      if(skillScroll.scrollLeft == 0) reverse = false;
+      if(reverse){
+        skillScroll.scrollBy(-1,0);
+      }else{
+        skillScroll.scrollBy(1,0);
+      }
 
-  view.onscroll = function(){
-    console.log("scroll=" + view.getBoundingClientRect().left);
+      levelWrappers.forEach((level, i) => {
+        skillInView(level, i);
+      });
+    }, 30);    
+    return auto;
+  }
+  let inView = new Array(levelWrappers.length);
+  for(let i = 0; i < levelWrappers.length; i++) inView[i] = false;
+  console.log(inView);
+
+  function skillInView(level, i){
+    let skillRect = skillScroll.getBoundingClientRect();
+    let rect = level.getBoundingClientRect();
+    let midpoint = Math.floor(rect.x + rect.width - (rect.width/2) - skillRect.x);
+    let visible = false;
+    if(midpoint <= 0 || midpoint >= skillRect.width) visible = false;
+    else                                             visible = true;
+
+    let incrementFunctions = new Array(levelWrappers.length);
+    let decrementFunctions = new Array(levelWrappers.length);
+    let levelTitle = levelWrappers[i].querySelector(".skill-level");
+    let progressValue;
+    let endValue = parseInt(levelTitle.getAttribute("level"));
+    let speed = 60;
+    //if previously not in View and now in View, increment
+    if(!inView[i] && visible){
+      progressValue = 0;
+      let progress = setInterval(function(){
+        progressValue++;
+     
+        if(progressValue == 1){
+          levelTitle.textContent = "Beginner";
+        }else if(progressValue == 30){
+          console.log("hello");
+          levelTitle.textContent = "Intermediate";
+          console.log("hello2");
+        }else if(progressValue == 60){
+          levelTitle.textContent = "Proficient";
+        }else if(progressValue == 90){
+          levelTitle.textContent = "Expert";
+        }
+    
+        levelTitle.textContent = progressValue;
+        if(progressValue == endValue) clearInterval(incrementFunctions[i]);
+        //console.log(progressValue);
+      }, speed);
+      incrementFunctions[i] = progress;
+    }else if(inView[i] && !visible){ //previously in View, now not in View, decrement
+      progressValue = endValue;
+      let progress = setInterval(function(){
+        progressValue--;
+        console.log("decrementing=" + progressValue);
+     
+        if(progressValue == 1){
+          levelTitle.textContent = "Beginner";
+        }else if(progressValue == 30){
+          console.log("hello");
+          levelTitle.textContent = "Intermediate";
+          console.log("hello2");
+        }else if(progressValue == 60){
+          levelTitle.textContent = "Proficient";
+        }else if(progressValue == 90){
+          levelTitle.textContent = "Expert";
+        }
+        levelTitle.textContent = progressValue;
+        if(progressValue <= 0) clearInterval(decrementFunctions[i]);
+        //console.log(progressValue);
+      }, speed);
+      decrementFunctions[i] = progress;    
+    } // else do nothing
+    
+    
+    if(midpoint <= 0 || midpoint >= skillRect.width) inView[i] = false;
+    else                                             inView[i] = true
   }
 
-
-  levelWrappers.forEach((level) => {
-    checkInView(view, level);
-  });
-
-};
-
-function checkInView(view, elem){
-  console.log("view=" + view.getBoundingClientRect().x)
-  console.log(elem.getBoundingClientRect().x);
-};
-
+  resizeScroll = function(){
+    clearInterval(autoScroll);
+    rightBound = Math.floor(skillScroll.scrollWidth - skillScroll.getBoundingClientRect().width);
+    autoScroll = initAutoScroll();
+  }
+}
 
 function initProjectStart(){
   /**intiializes the start states for items in the Project Block */
@@ -128,7 +202,7 @@ function initProjectStart(){
   });
 
   /**updates the selector overlay to the proper size on a window resize */
-  window.onresize = function(){
+  resizeOverlay = function(){
     let parent = projectTitles[currProjectIdx].parentElement;
     let b = parent.getBoundingClientRect();
     let h = b.height, w = b.width;
@@ -138,49 +212,15 @@ function initProjectStart(){
     selection.style.height = h + "px";
     selection.style.width = w + "px";
     selection.style.left = x + "px";  
-  };
+  }
 
   /** scroll on grab */
   let projectScrolls = document.querySelectorAll(".project-scene");
   let mouseIsDown = false;
   let startX;
-  let pos = {
-    // The current scroll
-    left: 0,
-    top: 0,
-    // Get the current mouse position
-    x: 0,
-    y: 0,
-  };  
   projectScrolls.forEach((pane) => {
-    pane.onmousedown = function(e){
-      pos = {
-        // The current scroll
-        left: pane.scrollLeft,
-        top: pane.scrollTop,
-        // Get the current mouse position
-        x: e.clientX,
-        y: e.clientY,
-    };
-      pane.addEventListener('mousemove', mouseMoveHandler);
-      pane.addEventListener('mouseup', mouseUpHandler);    
-    }
-    const mouseMoveHandler = function (e) {
-        // How far the mouse has been moved
-        const dx = e.clientX - pos.x;
-        const dy = e.clientY - pos.y;
-    
-        // Scroll the element
-        pane.scrollTop = pos.top - dy;
-        pane.scrollLeft = pos.left - dx;
-    };  
-    const mouseUpHandler = function () {
-      pane.removeEventListener('mousemove', mouseMoveHandler);
-      pane.removeEventListener('mouseup', mouseUpHandler);
+    scrollOnGrab(pane);
 
-      pane.style.cursor = 'grab';
-      pane.style.removeProperty('user-select');
-    }; 
   });
 }
 
@@ -212,6 +252,48 @@ function initWorkStart(){
       selection.style.left = workOptions[currWorkIdx].offsetLeft + "px";
     }
   });
+}
+
+function scrollOnGrab(pane){
+  let mouseIsDown = false;
+  let startX;
+  let pos = {
+    // The current scroll
+    left: 0,
+    top: 0,
+    // Get the current mouse position
+    x: 0,
+    y: 0,
+  };  
+
+  pane.onmousedown = function(e){
+    pos = {
+      // The current scroll
+      left: pane.scrollLeft,
+      top: pane.scrollTop,
+      // Get the current mouse position
+      x: e.clientX,
+      y: e.clientY,
+  };
+    pane.addEventListener('mousemove', mouseMoveHandler);
+    pane.addEventListener('mouseup', mouseUpHandler);    
+  }
+  const mouseMoveHandler = function (e) {
+      // How far the mouse has been moved
+      const dx = e.clientX - pos.x;
+      const dy = e.clientY - pos.y;
+  
+      // Scroll the element
+      pane.scrollTop = pos.top - dy;
+      pane.scrollLeft = pos.left - dx;
+  };  
+  const mouseUpHandler = function () {
+    pane.removeEventListener('mousemove', mouseMoveHandler);
+    pane.removeEventListener('mouseup', mouseUpHandler);
+
+    pane.style.cursor = 'grab';
+    pane.style.removeProperty('user-select');
+  };   
 }
 
 
