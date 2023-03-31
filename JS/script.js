@@ -1,6 +1,7 @@
 "use strict";
 let resizeOverlay; //initializing blank function
 let resizeScroll; //initializing blank function
+let pause = false;
 initTraits();
 initSkills();
 initProjectStart();
@@ -65,26 +66,30 @@ function initSkills(){
 
   let rightBound = Math.floor(skillScroll.scrollWidth - skillScroll.getBoundingClientRect().width);
   let reverse = false;
+
+  let scrollSpeed = 30;
   let autoScroll = initAutoScroll();
   function initAutoScroll(){
-    let auto = setInterval(function(){
-      if(skillScroll.scrollLeft == rightBound) reverse = true;
-      if(skillScroll.scrollLeft == 0) reverse = false;
-      if(reverse){
-        skillScroll.scrollBy(-1,0);
-      }else{
-        skillScroll.scrollBy(1,0);
-      }
+      let auto = setInterval(function(){
+          if(skillScroll.scrollLeft == rightBound) reverse = true;
+          if(skillScroll.scrollLeft == 0) reverse = false;
+          if(reverse){
+            if(!pause) skillScroll.scrollBy(-1,0);
+          }else{
+            if(!pause) skillScroll.scrollBy(1,0);
+          }
 
-      levelWrappers.forEach((level, i) => {
-        skillInView(level, i);
-      });
-    }, 30);    
-    return auto;
+          levelWrappers.forEach((level, i) => {
+            skillInView(level, i);
+          });
+      }, scrollSpeed);    
+      return auto;
   }
   let inView = new Array(levelWrappers.length);
   for(let i = 0; i < levelWrappers.length; i++) inView[i] = false;
-  console.log(inView);
+
+  let lTitles = document.querySelectorAll(".skill-level");
+  let lCircles = document.querySelectorAll(".outer-circle");
 
   function skillInView(level, i){
     let skillRect = skillScroll.getBoundingClientRect();
@@ -96,29 +101,30 @@ function initSkills(){
 
     let incrementFunctions = new Array(levelWrappers.length);
     let decrementFunctions = new Array(levelWrappers.length);
-    let levelTitle = levelWrappers[i].querySelector(".skill-level");
+    let levelTitle = lTitles[i];
+    let levelCircle = lCircles[i];
     let progressValue;
+    let circleProgress;
+
     let endValue = parseInt(levelTitle.getAttribute("level"));
     let speed = 60;
+
     //if previously not in View and now in View, increment
     if(!inView[i] && visible){
       progressValue = 0;
       let progress = setInterval(function(){
         progressValue++;
-     
         if(progressValue == 1){
           levelTitle.textContent = "Beginner";
         }else if(progressValue == 30){
-          console.log("hello");
           levelTitle.textContent = "Intermediate";
-          console.log("hello2");
         }else if(progressValue == 60){
           levelTitle.textContent = "Proficient";
         }else if(progressValue == 90){
           levelTitle.textContent = "Expert";
         }
-    
         levelTitle.textContent = progressValue;
+        levelCircle.style.background = `conic-gradient(#e6c251 ${progressValue * 3.6}deg, #ededed 0deg)`;
         if(progressValue == endValue) clearInterval(incrementFunctions[i]);
         //console.log(progressValue);
       }, speed);
@@ -127,14 +133,11 @@ function initSkills(){
       progressValue = endValue;
       let progress = setInterval(function(){
         progressValue--;
-        console.log("decrementing=" + progressValue);
      
         if(progressValue == 1){
           levelTitle.textContent = "Beginner";
         }else if(progressValue == 30){
-          console.log("hello");
           levelTitle.textContent = "Intermediate";
-          console.log("hello2");
         }else if(progressValue == 60){
           levelTitle.textContent = "Proficient";
         }else if(progressValue == 90){
@@ -157,6 +160,39 @@ function initSkills(){
     rightBound = Math.floor(skillScroll.scrollWidth - skillScroll.getBoundingClientRect().width);
     autoScroll = initAutoScroll();
   }
+  let navOptions = document.querySelectorAll(".nav-option.scroll-option");
+  let navItems = document.querySelectorAll(".scroll-option>a");
+  let jumpIds = new Array(navItems.length);
+  for(let i = 0; i < jumpIds.length; i++){
+    jumpIds[i] = navItems[i].getAttribute("href");    
+  }
+  
+  let jumpElements = new Array(jumpIds.length);
+  for(let i = 0; i < jumpElements.length; i++){
+    jumpElements[i] = document.querySelector(jumpIds[i]);
+  }
+
+  let delay = 1000;
+  var lastClick = 0;
+  let paused;
+  navOptions.forEach((option, i) => {
+    option.onclick = function(event){
+      if(lastClick >= (Date.now() - delay)){
+        console.log("did not run");
+        return;
+      }else{
+        lastClick = Date.now();
+        pause = true;
+        if(paused == null){
+          let paused = setTimeout(() => {
+            pause = false;
+          }, 800);
+          paused = null;
+        }
+      }
+    }
+  });  
+
 }
 
 function initProjectStart(){
@@ -295,5 +331,4 @@ function scrollOnGrab(pane){
     pane.style.removeProperty('user-select');
   };   
 }
-
 
