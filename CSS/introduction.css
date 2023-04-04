@@ -42,6 +42,29 @@
     border: solid;
 }
 
+.resume-btn{
+    height: 50px;
+    width: 100px;
+    margin: 10px auto;
+    border: solid 2px;
+    background-color: transparent;
+    border-radius: 2px;    
+    cursor: pointer;
+}
+.btn-container > div{
+    margin-top: 10px;
+}
+#compsci-btn{
+    border-color: white;
+    color: white;
+    transition: 0.5s;
+}
+#marketing-btn{
+    border-color: #8935af;
+    color: #8935af;
+    transition: 0.5s;
+}
+
 /** For rotating traits text **/
 .trait-list{
     display: inline;
@@ -54,7 +77,6 @@
     position: absolute;
     display: flex;
     opacity: 0;
-    color: white;
 }
 
 .trait .letter {
@@ -80,11 +102,11 @@
     align-items: center;    
     background: 
     linear-gradient(to top left,
-        rgba(192, 158, 6, 0.205) 0%,
+        rgba(192, 134, 25, 0.521) 0%,
         rgba(0, 0, 0, 0.836) calc(50% - 0.8px),
         rgb(0, 0, 0) 50%,
         rgba(0, 0, 0, 0) calc(50% + 0.8px),
-        rgba(192, 158, 6, 0.075) 100%),
+        rgba(192, 134, 25, 0.521) 100%),
     linear-gradient(to top right,
         rgba(0,0,0,0) 0%,
         rgba(0,0,0,0) calc(50% - 0.8px),
@@ -111,4 +133,21 @@ video::-webkit-media-controls {
     position: absolute;
     height: 100%;
     width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+    .intro-block{
+        flex-direction: column;
+    }
+    .intro-left, .intro-right{
+        width: 100% !important;
+        flex-direction: column;
+        margin: 0px;
+    }
+    .intro-left{
+        margin-top: 50px;
+    }
+    .intro-right{
+        margin-bottom: 50px;
+    }
 }

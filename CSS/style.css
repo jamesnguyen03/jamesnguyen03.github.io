@@ -4,7 +4,7 @@ html {
 h1, h2, h3{
     font-family: sans-serif;
     user-select: none;
-    color: #e6c251;
+
     background: -webkit-linear-gradient(#e6c251, #977503);
     -webkit-background-clip: text;
     background-clip: #e6c251;
@@ -27,16 +27,48 @@ body{
     margin: 0px auto;
     background-color: #252525;
 }
+.main-overlay{
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    background-color: rgba(71, 56, 4, 0.342);
+    display: none;
 
+}
 .grayed{
     color: rgb(153, 153, 153);
 }
 /** Styling for the Navigation Bar **/
+.toTop{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background: rgb(145,127,54);
+    background: linear-gradient(90deg, rgba(145,127,54,1) 0%, rgba(191,158,48,1) 44%, rgba(230,194,81,1) 100%);
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+    opacity: 0;
+    transition-duration: 0.2s;
+    box-shadow: 0px 1px 10px 0px rgb(73, 73, 73);
+}
+.toTop > .up{
+    width: 20px;
+    height: 20px;
+    margin: calc((100% - 20px)/2);
+}
 .navbar{
+    top: 0px;
     height: 80px;
     width: 100%;
     background-color: #0e0e0e;
-    box-shadow: 1px 1px 10px 0px black;
+    box-shadow: 3px 3px 10px 0px black;
+}
+.nav-container{
+    display: inline;
 }
 .nav-option, .nav-option > img, .game-btn{
     cursor: pointer;
@@ -49,8 +81,9 @@ body{
     display: inline;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.game-btn, .social-icons, .jump-links{
-    float: right
+.nav-container{
+    display: inline-flex;
+    float: right;
 }
 .personal-logo{
     height: 50px;
@@ -84,9 +117,75 @@ body{
 .jump-links{
     font-size: 14px;
 }
+.social-icons, .jump-links{
+    padding: 0px;
+    margin-left: 20px;
+}
 .nav-option{
     margin-left: 5px;
     margin-right: 5px;
+}
+
+/**Navigation for Mobile / Small Browser */
+@media only screen and (max-width: 800px) {
+    .personal-logo{
+        float: right;
+    }
+    .social-icons, .jump-links{
+        flex-direction: column;
+    }
+    .social-icons{
+        margin: 5%;
+    }
+    .jump-links{
+        list-style-type: none;
+        padding: 0px;
+        margin: 5%;
+        width: 80%;
+    }
+    .jump-links > li {
+        list-style-type: none;
+        padding: 0px;
+        display: block;
+        width: 100%;
+        border-bottom: solid 1px;
+    }
+    .game-btn{
+        width: 80%;
+        margin: 5%;
+    }
+    .drop-menu{
+        height: 40px;
+        width: 40px;
+        display: inline-flex;
+        margin: calc((80px - 40px)/2);
+        cursor: pointer;
+    }
+    .drop-menu.close{
+        margin: 5% auto;
+        background-image: url("../ImageAssets/close.png");
+        background-size: contain;    
+    }
+    .nav-container{
+        width: 400px;
+        height: 100%;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        background-color: #0e0e0e;
+        z-index: 1;
+        box-shadow: 0px 1px 10px 0px rgb(73, 73, 73);
+        top: 0px;
+        left: -450px;
+        transition: 0.5s;
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+        z-index: 10;
+    }
+    .drop-menu.open{
+        background-image: url("../ImageAssets/menus.png");
+        background-size: contain;
+    }
 }
 
 /** Navigation Button Animations **/

@@ -2,13 +2,16 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    margin-bottom: 20px;
+    background-image: url("../ImageAssets/OrangeWave2.svg");
+    background-size: cover;
+
 }
 
 .work-whiteboard{
     background-color:  #313131;
     width: 90%;
-    height: calc(100%);
+    height: 90%;
+    margin: 5%;
     box-shadow: 1px 1px 10px 0px black;
 }
 .work-selector{

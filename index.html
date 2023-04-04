@@ -16,256 +16,276 @@
         <!--Projects CSS-->
         <link rel="stylesheet" href="CSS/projects.css">     
         <!--Work CSS-->
-        <link rel="stylesheet" href="CSS/work.css">                      
+        <link rel="stylesheet" href="CSS/work.css">           
+        <div class="navbar">
+            <div class="drop-menu open" hidden>
+                <img>
+            </div>
+            <img class="personal-logo" src="ImageAssets/WhiteOrange.svg" alt="logo here">
+            <div class="nav-container">
+                <div class="drop-menu close">
+                    <img>
+                </div>
+                <ul class="jump-links">
+                    <li class="nb nav-option scroll-option"><a href="#intro"><div class="animate bounce nav-item"><h4>Home</h4></div></a></li>
+                    <li class="nb nav-option scroll-option"><a href="#skills" ><div class="animate bounce nav-item"><h4>Skills</h4></div></a></li>
+                    <li class="nb nav-option scroll-option"><a href="#projects"><div class="animate bounce nav-item"><h4>Projects</h4></div></a></li>
+                    <li class="nb nav-option scroll-option"><a href="#work"><div class="animate bounce nav-item"><h4>Work</h4></div></a></li>
+                </ul>
+                <ul class="social-icons">
+                    <li class="nb nav-option"><img class="animate spin" src="ImageAssets/linkedin.png" alt="LinkedIn"></li>
+                    <li class="nb nav-option"><img class="animate spin" src="ImageAssets/github.png" alt="GitHub"></li>
+                    <li class="nb nav-option"><img class="animate spin" src="ImageAssets/email.png" alt="Email"></li>   
+                </ul>       
+                <button class="jiggle game-btn"><span class="btn-text">Interactive Resume</span></button>                
+            </div>
+            <a href="#top" class="toTop nav-option scroll-option"><img class="up"src="ImageAssets/uparrow.png" alt="uparrow"></a>
+        </div>                     
     </head>          
 
-    <body>
-        <div class="navbar">
-            <img class="personal-logo" src="ImageAssets/WhiteVersion.svg" alt="logo here">
-            <button class="jiggle game-btn"><span class="btn-text">Interactive Resume</span></button>
-            <ul class="social-icons">
-                <li class="nb nav-option"><img class="animate spin" src="ImageAssets/linkedin.png" alt="LinkedIn"></li>
-                <li class="nb nav-option"><img class="animate spin" src="ImageAssets/github.png" alt="GitHub"></li>
-                <li class="nb nav-option"><img class="animate spin" src="ImageAssets/email.png" alt="Email"></li>   
-            </ul>       
-            <ul class="jump-links">
-                <li class="nb nav-option scroll-option"><a href="#intro"><div class="animate bounce nav-item"><h4>Home</h4></div></a></li>
-                <li class="nb nav-option scroll-option"><a href="#skills" ><div class="animate bounce nav-item"><h4>Skills</h4></div></a></li>
-                <li class="nb nav-option scroll-option"><a href="#projects"><div class="animate bounce nav-item"><h4>Projects</h4></div></a></li>
-                <li class="nb nav-option scroll-option"><a href="#work"><div class="animate bounce nav-item"><h4>Work</h4></div></a></li>
-            </ul>
-        </div>      
-
-        <div class="intro-block" id="intro">
-            <div class="intro-left">
-                <div class="intro-container">
-                    <div class="rotating-traits">
-                        <h5 class="trait-list">
-                            <span class="trait t-1">Driven</span>
-                            <span class="trait t-2">Determined</span>
-                            <span class="trait t-3">Pragmatic</span>
-                            <span class="trait t-4">Organized</span>
-                        </h5>
-                    </div>
-                    <h1 class="name-title">Hello, I'm James!</h1>
-                    <h4 class="degrees">Programmer & Digital Marketer</h4>
-                    <p>I am passionate about helping develop creative solutions that work! Whether it be a creative marketing campaign or a logical programming problem, I enjoy participating in projects that create value.</p>
-                    <p class="grayed">Here's some non-work related details about me. I really like the idea of <b><i>trying</i></b> to get out of your comfort zone. Traveling is one of my favorite ways to go beyond what's comfortable. I really enjoy experiencing new things, and traveling lets me do that. I also enjoy learning
-                    a little bit about everything that piques my interest. Finally, I also like collecting vintage games, trading cards, and limited edition sneakers. </p>
-                    <div class="btn-container">
-                        <button class="resume-btn" id="compsci-btn">Programming</button>
-                        <button class="resume-btn" id="marketing-btn">Marketing</button>
-                    </div>
-                    <button id="home-connect">Connect with me!</button>                    
-                </div>
-            </div>
-            <div class="intro-right">
-                <div class="window">
-                    <div class="vid-container">
-                        <div class="screen"></div>
-                        <video id="bgVideo" controls preload="true" autoplay loop muted>
-                            <source src="ImageAssets/Sphere.mp4" type="video/mp4" /> 
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="skills" id="skills">
-            <div class="skills-background">
-                <div class="skills-container">
-                    <div class="card-content">
-                        <div class="level-wrapper">
-                            <h2 class="skill-title">Java</h2>
-                            <div class="skill-circle">
-                                <div class="outer-circle">
-                                    <div class="inner-circle">
-                                        <h3 class="skill-level" level="10">Intermediate</h4>
-                                    </div>
-                                </div>
+    <body>    
+        <main>
+            <div class="main-overlay"></div>
+            <div class="intro-block" id="intro">
+                <div class="intro-left">
+                    <div class="intro-container">
+                        <div class="rotating-traits">
+                            <h5 class="trait-list grayed">
+                                <span class="trait t-1">Driven</span>
+                                <span class="trait t-2">Determined</span>
+                                <span class="trait t-3">Pragmatic</span>
+                                <span class="trait t-4">Organized</span>
+                            </h5>
+                        </div>
+                        <h1 class="name-title">Hello, I'm James!</h1>
+                        <h4 class="degrees">Programmer & Digital Marketer</h4>
+                        <p>I am passionate about helping develop creative solutions that work! Whether it be a creative marketing campaign or a logical programming problem, I enjoy participating in projects that create value.</p>
+                        <p class="grayed">Here's some non-work related details about me. I really like the idea of <b><i>trying</i></b> to get out of your comfort zone. Traveling is one of my favorite ways to go beyond what's comfortable. I really enjoy experiencing new things, and traveling lets me do that. I also enjoy learning
+                        a little bit about everything that piques my interest. Finally, I also like collecting vintage games, trading cards, and limited edition sneakers. </p>
+                        <div class="btn-container">
+                            <button class="resume-btn" id="compsci-btn">Programming</button>
+                            <button class="resume-btn" id="marketing-btn">Marketing</button>
+                            <div>
+                                <button id="home-connect">Connect with me!</button>     
                             </div>
-                        </div>                                       
-                        <p class="skill-description"> Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris. </p>
-                        <button class="connect">Connect with me!</button>
+                        </div>               
                     </div>
-                    <div class="card-content">
-                        <div class="level-wrapper">
-                            <h2 class="skill-title">Python</h2>
-                            <div class="skill-circle">
-                                <div class="outer-circle">
-                                    <div class="inner-circle">
-                                        <h3 class="skill-level" level="20">Intermediate</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                                       
-                        <p class="skill-description"> Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris. </p>
-                        <button class="connect">Connect with me!</button>
-                    </div>
-                    <div class="card-content">
-                        <div class="level-wrapper">
-                            <h2 class="skill-title">SQL</h2>
-                            <div class="skill-circle">
-                                <div class="outer-circle">
-                                    <div class="inner-circle">
-                                        <h3 class="skill-level" level="30">Intermediate</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                                       
-                        <p class="skill-description"> Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris. </p>
-                        <button class="connect">Connect with me!</button>
-                    </div>                    
                 </div>
-            </div>
-        </div>
-
-        <div class="projects" id="projects">
-            <div class="project-wrapper">
-                <h1 id="project-title">Projects</h1>
-                <p id="project-intro">Have a peek at some of my independent projects!</p>
-                <ul class="project-list">
-                    <li class="nb"><div class="selection-overlay" id="selection-overlay"></div></li>
-                    <li class="nb project-selection"><span class="project-title">Project 1</span></li>
-                    <li class="nb project-selection"><span class="project-title">Project 2</span></li>
-                    <li class="nb project-selection"><span class="project-title">Project 3</span></li>
-                </ul>
-                <div class="project-head">
-                    <h2 class="project-name">Web Automation Bots</h2>
-                    <p class="project-desc">This series of series of items...</p>
-                </div>
-                <div class="project-head">
-                    <h2 class="project-name">Website</h2>
-                    <p class="project-desc">This series of series of items...</p>
-                </div>
-                <div class="project-head">
-                    <h2 class="project-name">Interactive Resume</h2>
-                    <p class="project-desc">This series of series of items...</p>
-                </div>                                
-                <hr id="project-break">
-                <div class="project-body">
-                    <div class="project-scene">
-                        <div class="project-card-wrapper">
-                            <div class="technology-card">
-                                <p>hello</p>
-                            </div>                        
-                        </div>     
-                        <div class="project-card-wrapper">
-                            <div class="technology-card">
-                                <p>hello</p>
-                            </div>                        
-                        </div>  
-                        <div class="project-card-wrapper">
-                            <div class="technology-card">
-                                <p>hello</p>
-                            </div>                        
-                        </div>  
-                        <div class="project-card-wrapper">
-                            <div class="technology-card">
-                                <p>hello</p>
-                            </div>                        
-                        </div>     
-                    </div>   
-                    <div class="project-scene">
-                        <div class="project-card-wrapper">
-                            <div class="technology-card">
-                                <p>hi</p>
-                            </div>                        
-                        </div>     
-                        <div class="project-card-wrapper">
-                            <div class="technology-card">
-                                <p>hi</p>
-                            </div>                        
-                        </div>  
-                        <div class="project-card-wrapper">
-                            <div class="technology-card">
-                                <p>hi</p>
-                            </div>                        
-                        </div>  
-                        <div class="project-card-wrapper">
-                            <div class="technology-card">
-                                <p>hi</p>
-                            </div>                        
-                        </div>     
-                    </div>    
-                    <div class="project-scene">
-                        <div class="project-card-wrapper">
-                            <div class="technology-card">
-                                <p>yo</p>
-                            </div>                        
-                        </div>     
-                        <div class="project-card-wrapper">
-                            <div class="technology-card">
-                                <p>yo</p>
-                            </div>                        
-                        </div>  
-                        <div class="project-card-wrapper">
-                            <div class="technology-card">
-                                <p>yo</p>
-                            </div>                        
-                        </div>  
-                        <div class="project-card-wrapper">
-                            <div class="technology-card">
-                                <p>yo</p>
-                            </div>                        
-                        </div>     
-                    </div>                                                                                                                                                             
-                </div>
-            </div>
-        </div>
-
-        <div class="work" id="work">
-            <div class="work-whiteboard">
-                <div class="work-header">
-                    <h1 class="work-title">Work Experience</h1>
-                    <p class="work-intro">Have a look at some of the details of my professional work!</p>
-                    <div class="work-selector">
-                        <div class="work-overlay" id="work-overlay"></div>
-                        <ul class="work-list">
-                            <li class="nb work-option"><img src="ImageAssets/WD.png" alt="Weisser Distributing"></li>
-                            <li class="nb work-option"><img src="ImageAssets/FCGoods.png" alt="FC Goods"></li>
-                        </ul>
-                    </div>                    
-                </div>
-                <hr id="work-break">
-                <div class="work-card-wrapper">
-                    <div class="work-card">
-                        <h1 class="work-name">Weisser Distributing</h1>
-                        <h3 class="work-role">Digital Marketing & Web Support Specialist</h3>
-                        <p class="work-date">June 2022 — Present (Full-Time)</p>
-                        <h3 class="work-details">Description</h3>
-                        <p>Weisser Distributing is a warehousing company that provides fullfilment services for dozens of marketplaces like Amazon, eBay, Walmart, and more.</p>
-                        <div class="responsibilities">
-                            <h3 class="work-resp">Duties & Responsibilities</h3>
-                            <p class="grayed">Weisser Distributing is the parent company of FC Goods, the online storefront I was initially hired for. As I transitioned from an intern, to part-time, to full-time, I was given responsibilities in the parent company in addition to my already existing responsibilities.</p>
-                            <ul>
-                                <li class="work-bullet">Analyzed weekly performance metrics to determine appropriate advertising adjustments</li>
-                                <li class="work-bullet">Adjusted advertising campaigns in order to reach target ROAS, ACoS, and other key metric goals</li>
-                                <li class="work-bullet">Conducted market research of competing products to determine whether pricing, content, or other product adjustments would be required to stimulate sales</li>
-                            </ul>
+                <div class="intro-right">
+                    <div class="window">
+                        <div class="vid-container">
+                            <div class="screen"></div>
+                            <video controls preload="true" autoplay loop muted>
+                                <source src="ImageAssets/SphereOrange.mp4" type="video/mp4" /> 
+                            </video>
                         </div>
                     </div>
-                    <div class="work-card">
-                        <h1 class="work-name">Fielder's Choice Goods</h1>
-                        <h3 class="work-role">General Intern</h3>
-                        <p class="work-date">May 2021 — June 2022 (Internship / Part-Time)</p>
-                        <h3 class="work-details">Description</h3>
-                        <p>Fielder's Choice Goods (FC Goods) is an online storefront that handcrafts and delivers one-of-a-kind leather accessories made from repurposed vintage baseball glove leather.</p>
-                        <div class="responsibilities">
-                            <h3 class="work-resp">Duties & Responsibilities</h3>
-                            <ul>
-                                <li class="work-bullet">Analyzed weekly performance metrics to determine appropriate advertising adjustments</li>
-                                <li class="work-bullet">Adjusted advertising campaigns in order to reach target ROAS, ACoS, and other key metric goals</li>
-                                <li class="work-bullet">Conducted market research of competing products to determine whether pricing, content, or other product adjustments would be required to stimulate sales</li>
-                            </ul>
-                        </div>
-                    </div>                              
                 </div>
             </div>
-        </div>
-
-        <script src="JS/script.js"></script>
-        <script src="JS/swiper-bundle.min.js"></script>
-        <script src="JS/swiperscript.js"></script>         
+            <div class="skills" id="skills">
+                <div class="skills-background">
+                    <div class="skills-container">
+                        <div class="card-content">
+                            <div class="level-wrapper">
+                                <h2 class="skill-title">Java</h2>
+                                <div class="skill-circle">
+                                    <div class="outer-circle">
+                                        <div class="inner-circle">
+                                            <h3 class="skill-level" level="65">Intermediate</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                                       
+                            <p class="skill-description"> Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris. </p>
+                            <button class="connect">Connect with me!</button>
+                        </div>
+                        <div class="card-content">
+                            <div class="level-wrapper">
+                                <h2 class="skill-title">Python</h2>
+                                <div class="skill-circle">
+                                    <div class="outer-circle">
+                                        <div class="inner-circle">
+                                            <h3 class="skill-level" level="45">Intermediate</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                                       
+                            <p class="skill-description"> Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris. </p>
+                            <button class="connect">Connect with me!</button>
+                        </div>
+                        <div class="card-content">
+                            <div class="level-wrapper">
+                                <h2 class="skill-title">SQL</h2>
+                                <div class="skill-circle">
+                                    <div class="outer-circle">
+                                        <div class="inner-circle">
+                                            <h3 class="skill-level" level="30">Intermediate</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                                       
+                            <p class="skill-description"> Lorem ipsum dolor sit amet, mea at quem assum quaeque, at est nisl alia unum, ei assentior consetetur usu. Mea idque quaeque te. Vim oblique labitur feugiat ad, nisl eirmod deleniti quo at. Mei cu tale homero, ne falli detracto scribentur per. Ut salutandi ocurreret sit, vide duis definitiones cu usu. Iriure alterum ut usu, te eum ridens putant delicata. Tritani dissentias eum ad, quo mucius periculis ei, has ex partem tamquam interpretaris. </p>
+                            <button class="connect">Connect with me!</button>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+            <div class="projects" id="projects">
+                <div class="project-wrapper">
+                    <h1 id="project-title">Projects</h1>
+                    <p id="project-intro">Have a peek at some of my independent projects!</p>
+                    <ul class="project-list">
+                        <li class="nb"><div class="selection-overlay" id="selection-overlay"></div></li>
+                        <li class="nb project-selection"><span class="project-title">Web Automation Bots</span></li>
+                        <li class="nb project-selection"><span class="project-title">Online Portfolio</span></li>
+                        <li class="nb project-selection" hidden><span class="project-title">Project 3</span></li>
+                    </ul>
+                    <div class="project-head">
+                        <h2 class="project-name">Web Automation Bots</h2>
+                        <p class="project-desc">This series of series of items...</p>
+                    </div>
+                    <div class="project-head">
+                        <h2 class="project-name">Website</h2>
+                        <p class="project-desc">This series of series of items...</p>
+                    </div>
+                    <div class="project-head">
+                        <h2 class="project-name">Interactive Resume</h2>
+                        <p class="project-desc">This series of series of items...</p>
+                    </div>                                
+                    <hr id="project-break">
+                    <div class="project-body">
+                        <div class="project-scene">
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <p>hello</p>
+                                </div>                        
+                            </div>     
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <p>hello</p>
+                                </div>                        
+                            </div>  
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <p>hello</p>
+                                </div>                        
+                            </div>  
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <p>hello</p>
+                                </div>                        
+                            </div>     
+                        </div>   
+                        <div class="project-scene">
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <p>hi</p>
+                                </div>                        
+                            </div>     
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <p>hi</p>
+                                </div>                        
+                            </div>  
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <p>hi</p>
+                                </div>                        
+                            </div>  
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <p>hi</p>
+                                </div>                        
+                            </div>     
+                        </div>    
+                        <div class="project-scene">
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <p>yo</p>
+                                </div>                        
+                            </div>     
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <p>yo</p>
+                                </div>                        
+                            </div>  
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <p>yo</p>
+                                </div>                        
+                            </div>  
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <p>yo</p>
+                                </div>                        
+                            </div>     
+                        </div>                                                                                                                                                             
+                    </div>
+                </div>
+            </div>
+            <div class="work" id="work">
+                <div class="work-whiteboard">
+                    <div class="work-header">
+                        <h1 class="work-title">Work Experience</h1>
+                        <p class="work-intro">Have a look at some of the details of my professional work!</p>
+                        <div class="work-selector">
+                            <div class="work-overlay" id="work-overlay"></div>
+                            <ul class="work-list">
+                                <li class="nb work-option"><img src="ImageAssets/WD.png" alt="Weisser Distributing"></li>
+                                <li class="nb work-option"><img src="ImageAssets/FCGoods.png" alt="FC Goods"></li>
+                            </ul>
+                        </div>                    
+                    </div>
+                    <hr id="work-break">
+                    <div class="work-card-wrapper">
+                        <div class="work-card">
+                            <h1 class="work-name">Weisser Distributing</h1>
+                            <h3 class="work-role">Digital Marketing & Web Support Specialist</h3>
+                            <p class="work-date">June 2022 — Present (Full-Time)</p>
+                            <h3 class="work-details">Description</h3>
+                            <p>Weisser Distributing is a warehousing company that provides fullfilment services for dozens of marketplaces like Amazon, eBay, Walmart, and more.</p>
+                            <div class="responsibilities">
+                                <h3 class="work-resp">Duties & Responsibilities</h3>
+                                <p class="grayed">Weisser Distributing is the parent company of FC Goods, the online storefront I was initially hired for. As I transitioned from an intern, to part-time, and then to full-time, I was given responsibilities in the parent company in addition to my already existing responsibilities.</p>
+                                <ul>
+                                    <li class="work-bullet">Analyzed weekly performance metrics to determine appropriate advertising adjustments</li>
+                                    <li class="work-bullet">Adjusted advertising campaigns in order to reach target ROAS, ACoS, and other key metric goals</li>
+                                    <li class="work-bullet">Conducted market research of competing products to determine whether pricing, content, or other product adjustments would be required to stimulate sales</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="work-card">
+                            <h1 class="work-name">Fielder's Choice Goods</h1>
+                            <h3 class="work-role">General Intern</h3>
+                            <p class="work-date">May 2021 — June 2022 (Internship / Part-Time)</p>
+                            <h3 class="work-role">Digital Marketing & Web Support Specialist</h3>
+                            <p class="work-date">June 2022 — Present (Full-Time)</p>
+                            <h3 class="work-details">Description</h3>
+                            <p>Fielder's Choice Goods (FC Goods) is an online storefront that handcrafts and delivers one-of-a-kind leather accessories made from repurposed vintage baseball glove leather.</p>
+                            <div class="responsibilities">
+                                <h3 class="work-resp">Duties & Responsibilities</h3>
+                                <ul>
+                                    <li class="work-bullet">Developed a product customization experience using HTML, CSS, and JavaScript to encourage sales for a new product</li>
+                                    <li class="work-bullet">Improved upon existing assets by implementing Shopify Liquid and JavaScript solutions to make webpages more aggressive and easier to navigate</li>
+                                    <li class="work-bullet">Communicated and collaborated with several department leads to integrate new solutions with existing management software</li>
+                                    <li class="work-bullet">Operated and maintained many functions within the online store
+                                        <ul class="nested">
+                                            <li class="work-bullet">Collaborated with Brand Manager to develop marketing strategies</li>
+                                            <li class="work-bullet">Utilized Google Ads and Meta Ads platform to develop and deliver marketing campaigns</li>
+                                            <li class="work-bullet">Managed and enhanced email automations to encourage repeat purchases</li>
+                                            <li class="work-bullet">Designed creatives using Photoshop, Adobe Illustrator, and DaVinci Resolve</li>
+                                            <li class="work-bullet">Photographed, edited, and listed new products online</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>                              
+                    </div>
+                </div>
+            </div>      
+    </main>
+    <script src="JS/script.js"></script>
+    <script src="JS/swiper-bundle.min.js"></script>
+    <script src="JS/swiperscript.js"></script>       
     </body>      
 </html>

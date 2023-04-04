@@ -1,6 +1,8 @@
 .skills{
     display: flex;
     justify-content: center;
+    background-image: url("../ImageAssets/OrangeWave1.svg");
+    background-size: cover;
 }
 .skills-background{
     display: flex;
@@ -63,7 +65,7 @@
     align-items: center;
     box-shadow: 5px 5px 10px 0px rgb(5, 5, 5),
                 -5px -5px 10px 0px rgb(102, 102, 102);
-    background: white;
+    background: #313131;
 }
 
 .inner-circle{

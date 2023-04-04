@@ -1,3 +1,6 @@
+.projects{
+    margin-top: 30px;
+}
 .project-wrapper{
     display: flex;
     flex-direction: column;
@@ -11,7 +14,7 @@
 }
 
 .project-selection{
-    flex-grow: 1;
+    flex: 1;
     text-align: center;
     padding: 5px;
     z-index: 1;
