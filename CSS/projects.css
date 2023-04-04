@@ -35,6 +35,10 @@
     transition-timing-function: cubic-bezier(0.68, -0.30, 0.265, 1.30); 
     top: 0px;
 }
+.marketing .selection-overlay{
+    background: rgb(101,27,134);
+    background: linear-gradient(90deg, rgba(101,27,134,1) 0%, rgba(137,53,175,1) 44%, rgba(191,92,236,1) 100%);
+}
 .project-body{
     display: block;
     width: 100%;

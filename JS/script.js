@@ -43,14 +43,19 @@ let gameBtn = document.querySelector(".game-btn");
 let h1s = document.querySelectorAll("h1");
 let h2s = document.querySelectorAll("h2");
 let h3s = document.querySelectorAll("h3");
+let skillMktg = document.querySelector(".skills-container.marketing");
+let skillCsc = document.querySelector(".skills-container.compsci");
+let projectScenes = document.querySelectorAll(".project-scene");
+let projectHeads = document.querySelectorAll(".project-head");
 
 mktgBtn.onclick = function(){
   if(portfolioType != 1){
+    portfolioType = 1;
+
     video.pause();
     source.setAttribute("src", "ImageAssets/SpherePurple.mp4");
     video.load();
     video.play();
-    portfolioType = 1;
     videoContainer.style.background = `linear-gradient(to top left,
       rgba(107, 5, 133, 0.521) 0%,
       rgba(0, 0, 0, 0.836) calc(50% - 0.8px),
@@ -64,8 +69,9 @@ mktgBtn.onclick = function(){
       rgba(0,0,0,0) calc(50% + 0.8px),
       rgba(0,0,0,0) 100%)`;
 
-    projectOverlay.style.background = "rgb(101,27,134)";
-    projectOverlay.style.background = "linear-gradient(90deg, rgba(101,27,134,1) 0%, rgba(137,53,175,1) 44%, rgba(191,92,236,1) 100%)";
+    skillMktg.style.display = "flex";
+    skillCsc.style.display = "none";
+
     workOverlay.style.background = "#8935af";
     mainOverlay.style.background = "rgba(136, 53, 175, 0.286)"
     scrollUp.style.background = "#8935af";
@@ -95,17 +101,17 @@ mktgBtn.onclick = function(){
       makeTextPurple(elem);
     });    
 
-    cscBtn.style.color = "#e6c251";
-    cscBtn.style.borderColor = "#e6c251";
+    cscBtn.style.color = "#8935af";
+    cscBtn.style.borderColor = "#8935af";
   }
 }
 cscBtn.onclick = function(){
   if(portfolioType != 0){
+    portfolioType = 0;
     video.pause();
     source.setAttribute("src", "ImageAssets/SphereOrange.mp4");
     video.load();
     video.play();
-    portfolioType = 0;
     videoContainer.style.background = `linear-gradient(to top left,
       rgba(192, 134, 25, 0.521) 0%,
       rgba(0, 0, 0, 0.836) calc(50% - 0.8px),
@@ -119,8 +125,9 @@ cscBtn.onclick = function(){
       rgba(0,0,0,0) calc(50% + 0.8px),
       rgba(0,0,0,0) 100%)`;
 
-    projectOverlay.style.background = "rgb(145,127,54)"; 
-    projectOverlay.style.background = "linear-gradient(90deg, rgba(145,127,54,1) 0%, rgba(191,158,48,1) 44%, rgba(230,194,81,1) 100%)"; 
+    skillMktg.style.display = "none";
+    skillCsc.style.display = "flex";      
+
     workOverlay.style.background = "#e6c251";
     mainOverlay.style.background = "rgba(71, 56, 4, 0.342)"
     scrollUp.style.background = "#e6c251";
@@ -132,6 +139,7 @@ cscBtn.onclick = function(){
     gameBtn.style.borderColor = "#e6c251";
     cscBtn.style.color = "white";
     cscBtn.style.borderColor = "white";
+
     
 
     function makeTextOrange(elem){
@@ -150,8 +158,18 @@ cscBtn.onclick = function(){
       makeTextOrange(elem);
     }); 
 
-    mktgBtn.style.color = "#8935af";
-    mktgBtn.style.borderColor = "#8935af";
+    resizeOverlay(0);
+    projectScenes.forEach((elem) => {
+      elem.style.display = "none";
+    });
+    projectHeads.forEach((elem) =>{
+      elem.style.display = "none";
+    });
+    projectScenes[0].style.display = "flex";
+    projectHeads[0].style.display = "block";
+
+    mktgBtn.style.color = "#e6c251";
+    mktgBtn.style.borderColor = "#e6c251";
   }
 }
 
@@ -198,32 +216,37 @@ function initTraits(){
 }
 
 function initSkills(){
-  let skillScroll = document.querySelector(".skills-container");
-
+  let mktgScroll = document.querySelector(".skills-container.marketing");
+  let cscScroll = document.querySelector(".skills-container.compsci");
   let levelWrappers = document.querySelectorAll(".level-wrapper");
-  let rightBound = Math.floor(skillScroll.scrollWidth - skillScroll.getBoundingClientRect().width);
-  let reverse = false;
 
   let scrollSpeed = 30;
-  let autoScroll = initAutoScroll();
-  function initAutoScroll(){
+  let autoScroll = [initAutoScroll(0),initAutoScroll(1)];
+  function initAutoScroll(type){
+    let reverse = false;
       let auto = setInterval(function(){
-          if(skillScroll.scrollLeft == rightBound) reverse = true;
-          if(skillScroll.scrollLeft == 0) reverse = false;
-          if(reverse){
-            if(!pause) skillScroll.scrollBy(-1,0);
-          }else{
-            if(!pause) skillScroll.scrollBy(1,0);
-          }
+        let skillScroll;
+        if(type == 0){
+          skillScroll = cscScroll;
+        }else{
+          skillScroll = mktgScroll;
+        }
+        let rightBound = Math.floor(skillScroll.scrollWidth - skillScroll.getBoundingClientRect().width);
+        if(skillScroll.scrollLeft == rightBound) reverse = true;
+        if(skillScroll.scrollLeft == 0) reverse = false;
+         if(reverse){
+          if(!pause) skillScroll.scrollBy(-1,0);
+        }else{
+          if(!pause) skillScroll.scrollBy(1,0);
+        }
       }, scrollSpeed);    
-      return auto;
+    return auto;
   }
   let inView = new Array(levelWrappers.length);
   for(let i = 0; i < levelWrappers.length; i++) inView[i] = false;
 
-  let lTitles = document.querySelectorAll(".skill-level");
-  let lCircles = document.querySelectorAll(".outer-circle");
-  lCircles.forEach((elem) =>{
+  let circleOrange = document.querySelectorAll(".compsci .outer-circle");
+  circleOrange.forEach((elem) =>{
     let skillLevel = elem.querySelector(".skill-level");
     let progressValue = skillLevel.getAttribute("level");
     elem.style.background = `conic-gradient(#f7cb3b ${progressValue * 3.6}deg, #313131 0deg)`;
@@ -238,13 +261,30 @@ function initSkills(){
     }
   });
 
+  let circlePurple = document.querySelectorAll(".marketing .outer-circle");
+  circlePurple.forEach((elem) =>{
+    let skillLevel = elem.querySelector(".skill-level");
+    let progressValue = skillLevel.getAttribute("level");
+    elem.style.background = `conic-gradient(#8935af ${progressValue * 3.6}deg, #313131 0deg)`;
+    if(progressValue < 60){
+      skillLevel.innerHTML = "Beginner";
+    }else if(progressValue < 75){
+      skillLevel.innerHTML = "Intermediate"
+    }else if(progressValue < 90){
+      skillLevel.innerHTML = "Proficient"
+    }else{
+      skillLevel.innerHTML = "Expert";
+    }
+  });  
+
   resizeScroll = function(){
-    clearInterval(autoScroll);
-    rightBound = Math.floor(skillScroll.scrollWidth - skillScroll.getBoundingClientRect().width);
-    autoScroll = initAutoScroll();
+    clearInterval(autoScroll[0]);
+    clearInterval(autoScroll[1]);
+    autoScroll = [initAutoScroll(0),initAutoScroll(1)];
   }
 
-  scrollOnGrab(skillScroll, autoScroll);
+  scrollOnGrab(cscScroll, autoScroll);
+  scrollOnGrab(mktgScroll, autoScroll);
   pauseToScroll();
 }
 
@@ -258,10 +298,10 @@ function initProjectStart(){
 
   /** Sets the Project Selector at the First Element **/
   let parentRect = projectTitles[currProjectIdx].parentElement.getBoundingClientRect();
-  let selection = document.getElementById("selection-overlay");
-  selection.style.height = parentRect.height + "px";
-  selection.style.width = parentRect.width + "px";
-  selection.style.left = "0px";
+  let selections = document.querySelectorAll("#selection-overlay");
+  selections[0].style.height = parentRect.height + "px";
+  selections[0].style.width = parentRect.width + "px";
+  selections[0].style.left = "0px";
 
   projectScenes[currProjectIdx].style.display = "flex";
   projectHeads[currProjectIdx].style.display = "block";
@@ -279,11 +319,13 @@ function initProjectStart(){
 
       /**updates the selection overlay */
       let parent = elem.parentElement;
+      console.log("parent = " + parent.innerHTML);
       let b = parent.getBoundingClientRect();
       let h = b.height, w = b.width;
       let x = parent.offsetLeft;
 
-      let selection = document.getElementById("selection-overlay");
+      let container = parent.parentElement.parentElement;
+      let selection = container.querySelector("#selection-overlay");
       selection.style.height = h + "px";
       selection.style.width = w + "px";
       selection.style.left = x + "px";
@@ -291,13 +333,15 @@ function initProjectStart(){
   });
 
   /**updates the selector overlay to the proper size on a window resize */
-  resizeOverlay = function(){
+  resizeOverlay = function(idx){
+    if (idx != null) currProjectIdx = idx;
     let parent = projectTitles[currProjectIdx].parentElement;
     let b = parent.getBoundingClientRect();
     let h = b.height, w = b.width;
     let x = parent.offsetLeft;
 
-    let selection = document.getElementById("selection-overlay");
+    let container = parent.parentElement.parentElement;
+    let selection = container.querySelector("#selection-overlay");
     selection.style.height = h + "px";
     selection.style.width = w + "px";
     selection.style.left = x + "px";  
