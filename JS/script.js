@@ -411,6 +411,7 @@ function scrollOnGrab(pane, autoScroll=null){
       x: e.clientX,
       y: e.clientY,
   };
+    pane.style.cursor = 'grab';
     pane.addEventListener('mousemove', mouseMoveHandler);
     pane.addEventListener('mouseup', mouseUpHandler);    
   }
@@ -428,7 +429,7 @@ function scrollOnGrab(pane, autoScroll=null){
     pane.removeEventListener('mousemove', mouseMoveHandler);
     pane.removeEventListener('mouseup', mouseUpHandler);
 
-    pane.style.cursor = 'grab';
+    pane.style.cursor = 'auto';
     pane.style.removeProperty('user-select');
   };   
 }
@@ -476,29 +477,18 @@ function mobileNavClose(){
 }
 
 function pauseToScroll(){
-  let navOptions = document.querySelectorAll(".nav-option.scroll-option");
-  let navItems = document.querySelectorAll(".scroll-option>a");
-  let jumpIds = new Array(navItems.length);
-
-  for(let i = 0; i < jumpIds.length; i++){
-    jumpIds[i] = navItems[i].getAttribute("href");    
-  }
-  
-  let jumpElements = new Array(jumpIds.length);
-  for(let i = 0; i < jumpElements.length; i++){
-    jumpElements[i] = document.querySelector(jumpIds[i]);
-  }
+  let navOptions = document.querySelectorAll(".nav-option .scroll-option");
+  let scrollUp = document.querySelector(".toTop");
 
   let delay = 1000;
   var lastClick = 0;
   let paused;
   navOptions.forEach((option, i) => {
-    option.onclick = function(event){
+    option.onclick = function(){
       if(isMobile){
         mobileNavClose();
       }
       if(lastClick >= (Date.now() - delay)){
-        console.log("did not run");
         return;
       }else{
         lastClick = Date.now();
@@ -512,4 +502,22 @@ function pauseToScroll(){
       }
     }
   });  
+
+  scrollUp.onclick = function(){
+    if(isMobile){
+      mobileNavClose();
+    }
+    if(lastClick >= (Date.now() - delay)){
+      return;
+    }else{
+      lastClick = Date.now();
+      pause = true;
+      if(paused == null){
+        let paused = setTimeout(() => {
+          pause = false;
+        }, 800);
+        paused = null;
+      }
+    }
+  }
 }

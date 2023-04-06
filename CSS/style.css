@@ -70,7 +70,7 @@ body{
 .nav-container{
     display: inline;
 }
-.nav-option, .nav-option > img, .game-btn{
+ .nav-option > img, .game-btn{
     cursor: pointer;
 }
 .nav-item{
@@ -186,6 +186,9 @@ body{
         background-image: url("../ImageAssets/menus.png");
         background-size: contain;
     }
+    .connect-container{
+        margin-bottom: 30px;
+    }
 }
 
 /** Navigation Button Animations **/
@@ -207,6 +210,23 @@ body{
     animation-name: jiggle;
     animation-iteration-count: 1;
     animation-duration: 0.3s;
+}
+
+/**Connect Buttons*/
+.connect{
+    padding: 0px 0px;
+    color: #e6c251;
+    background: transparent;
+    border: none;
+}
+
+.connect-container > img{
+    height: 20px;
+}
+.connect-container{
+    display: flex;
+    align-items: center;
+    width: max-content;
 }
 
 @keyframes bounce{
