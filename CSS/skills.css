@@ -29,8 +29,8 @@
     min-width: 33%;
 }
 
-.skill-title, .skill-description{
-    margin: 10px;
+.skill-title{
+    text-align: center;
 }
 .skill-title, .skill-description{
     margin: 30px;

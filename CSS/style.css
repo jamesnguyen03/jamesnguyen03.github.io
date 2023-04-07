@@ -222,11 +222,13 @@ body{
 
 .connect-container > img{
     height: 20px;
+    margin-right: 10px;
 }
 .connect-container{
     display: flex;
     align-items: center;
     width: max-content;
+    cursor: pointer;
 }
 
 @keyframes bounce{
