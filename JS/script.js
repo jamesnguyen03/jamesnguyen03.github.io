@@ -4,6 +4,7 @@ let resizeScroll; //initializing blank function
 let pause = false;
 let isMobile = window.innerWidth <= 800 ? true : false;
 let portfolioType = 0; //0 for programming, 1 for marketing
+let currProjectIdx = 0;
 
 initTraits();
 initSkills();
@@ -14,7 +15,7 @@ initMenu();
 /**window functions*/
 window.onresize = function(){
   isMobile = window.innerWidth <= 800 ? true : false;
-  resizeOverlay();
+  resizeOverlay(currProjectIdx);
   resizeScroll();
 }
 
@@ -45,8 +46,12 @@ let h2s = document.querySelectorAll("h2");
 let h3s = document.querySelectorAll("h3");
 let skillMktg = document.querySelector(".skills-container.marketing");
 let skillCsc = document.querySelector(".skills-container.compsci");
-let projectScenes = document.querySelectorAll(".project-scene");
-let projectHeads = document.querySelectorAll(".project-head");
+let projectCscScenes = document.querySelectorAll(".compsci > .project-body > .project-scene");
+let projectCscHeads = document.querySelectorAll(".compsci > .project-head");
+let projectMktgScenes = document.querySelectorAll(".marketing > .project-body > .project-scene");
+let projectMktgHeads = document.querySelectorAll(".marketing > .project-head");
+let cscProject = document.querySelector(".project-wrapper.compsci");
+let mktgProject = document.querySelector(".project-wrapper.marketing");
 
 mktgBtn.onclick = function(){
   if(portfolioType != 1){
@@ -69,9 +74,12 @@ mktgBtn.onclick = function(){
       rgba(0,0,0,0) calc(50% + 0.8px),
       rgba(0,0,0,0) 100%)`;
 
+    mktgProject.style.display = "flex";
+    cscProject.style.display = "none";
     skillMktg.style.display = "flex";
     skillCsc.style.display = "none";
 
+    resizeOverlay(projectCscHeads.length);
     workOverlay.style.background = "#8935af";
     mainOverlay.style.background = "rgba(136, 53, 175, 0.286)"
     scrollUp.style.background = "#8935af";
@@ -101,6 +109,15 @@ mktgBtn.onclick = function(){
       makeTextPurple(elem);
     });    
 
+    projectMktgScenes.forEach((elem) => {
+      elem.style.display = "none";
+    });
+    projectMktgHeads.forEach((elem) =>{
+      elem.style.display = "none";
+    });
+    projectMktgScenes[0].style.display = "flex";
+    projectMktgHeads[0].style.display = "block";
+
     cscBtn.style.color = "#8935af";
     cscBtn.style.borderColor = "#8935af";
   }
@@ -125,6 +142,8 @@ cscBtn.onclick = function(){
       rgba(0,0,0,0) calc(50% + 0.8px),
       rgba(0,0,0,0) 100%)`;
 
+    mktgProject.style.display = "none";
+    cscProject.style.display = "flex";      
     skillMktg.style.display = "none";
     skillCsc.style.display = "flex";      
 
@@ -159,14 +178,14 @@ cscBtn.onclick = function(){
     }); 
 
     resizeOverlay(0);
-    projectScenes.forEach((elem) => {
+    projectCscScenes.forEach((elem) => {
       elem.style.display = "none";
     });
-    projectHeads.forEach((elem) =>{
+    projectCscHeads.forEach((elem) =>{
       elem.style.display = "none";
     });
-    projectScenes[0].style.display = "flex";
-    projectHeads[0].style.display = "block";
+    projectCscScenes[0].style.display = "flex";
+    projectCscHeads[0].style.display = "block";
 
     mktgBtn.style.color = "#e6c251";
     mktgBtn.style.borderColor = "#e6c251";
@@ -291,7 +310,6 @@ function initSkills(){
 function initProjectStart(){
   /**intiializes the start states for items in the Project Block */
   let projectTitles = document.querySelectorAll(".project-title");
-  let currProjectIdx = 0;
 
   let projectScenes = document.querySelectorAll(".project-scene");
   let projectHeads = document.querySelectorAll(".project-head");

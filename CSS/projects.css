@@ -6,6 +6,9 @@
     flex-direction: column;
     align-items: center;
 }
+.project-wrapper.marketing{
+    display: none;
+}
 #project-title, #project-intro{
     margin: 5px;
 }
@@ -59,14 +62,6 @@
     min-width: 300px;
     margin: 20px;
 }
-.technology-card{
-    max-width: 400px;
-    width: 100%;
-    aspect-ratio: 3/4;
-    background-color: #313131;
-    box-shadow: 1px 1px 10px 0px black;
-    border-radius: 10px;
-}
 #project-break{
     width: 50%;
 }
@@ -79,6 +74,67 @@
     display: flex;
     align-items: center;
     border-radius: 15px;
+}
+
+/**Technology Card CSS*/
+.technology-card{
+    max-width: 400px;
+    width: 100%;
+    aspect-ratio: 3/4;
+    background-color: #313131;
+    box-shadow: 1px 1px 10px 0px black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.technology-title{
+    font-size: 2.5em;
+}
+.technology-card > .inset{
+    position: relative;
+    box-shadow: inset 1px 1px 10px 0px black;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.technology-card > .inset > .image-container{
+    background-color: gray;
+    width: calc(100% - 25px);
+    height: calc(100% - 25px);
+
+}
+.technology-card > .inset > .tab.orange{
+    position: absolute;
+    background-color: #e6c251;
+    bottom: 0px;
+    z-index: 1;
+    cursor: pointer;
+}
+.tab > p{
+    padding: 3px 20px;;
+    margin: 0px;
+}
+.technology-card > .inset > .overlay.orange{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 1px 1px 10px 0px black;
+    background-color: #e6c3519c;
+    display: flex;
+    justify-content: center;
+}
+.technology-card > .inset > .overlay > p{
+    width: calc(100% - 40px);
+    color: rgb(255, 255, 255);
+}
+.java{
+    background-size: cover;
+    background-position: center;
+    background-image: url(../ImageAssets/java.png);
 }
 
 @media only screen and (max-width: 700px) {
