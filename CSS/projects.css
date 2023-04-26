@@ -107,29 +107,44 @@
     height: calc(100% - 25px);
 
 }
-.technology-card > .inset > .tab.orange{
+.technology-card > .inset > .tab{
     position: absolute;
-    background-color: #e6c251;
     bottom: 0px;
     z-index: 1;
     cursor: pointer;
+}
+.tab.orange{
+    background-color: #e6c251;
+}
+.tab.purple{
+    background-color: #8935af;
 }
 .tab > p{
     padding: 3px 20px;;
     margin: 0px;
 }
-.technology-card > .inset > .overlay.orange{
+.technology-card > .inset > .overlay{
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 0%;
     box-shadow: inset 1px 1px 10px 0px black;
-    background-color: #e6c3519c;
     display: flex;
     justify-content: center;
+    bottom: 0px;
+    opacity: 0;
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);    
+}
+.overlay.orange{
+    background-color: #e6c3519c;    
+}
+.overlay.purple{
+    background-color: #8835afa1;
 }
 .technology-card > .inset > .overlay > p{
     width: calc(100% - 40px);
     color: rgb(255, 255, 255);
+    display: none;
 }
 .java{
     background-size: cover;

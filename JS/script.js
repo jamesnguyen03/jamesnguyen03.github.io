@@ -539,3 +539,25 @@ function pauseToScroll(){
     }
   }
 }
+
+let insets = document.querySelectorAll(".inset");
+insets.forEach((insetElem, i) => {
+  let tab = insetElem.querySelector(".tab");
+  let overlay = insetElem.querySelector(".overlay");
+  let txt = overlay.querySelector("p");
+  tab.onclick = function(){
+    if(tab.innerHTML.includes("Read")){
+      overlay.style.height = "100%";
+      overlay.style.opacity = "1";
+      txt.style.display = "block";
+      tab.innerHTML = "<p>Hide</p>";
+    }else{
+      overlay.style.height = "0%";
+      overlay.style.opacity = "0";
+      txt.style.display = "none";
+      tab.innerHTML = "<p>Read More</p>";      
+    }
+
+  }
+});
+

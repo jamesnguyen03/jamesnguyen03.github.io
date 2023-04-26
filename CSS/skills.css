@@ -90,7 +90,9 @@
 .connect{
     margin: 10px;
 }
-
+.connect.purple{ 
+    color: #ab4fd6;
+}
 .slide-wrapper{
     display: flex;
     flex-direction: column;
