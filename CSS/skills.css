@@ -21,6 +21,7 @@
     max-width: 100%;
     justify-content: left;
     overflow: hidden;
+    touch-action: none
 }
 .skills-container.marketing{
     display: none;

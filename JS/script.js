@@ -418,7 +418,8 @@ function scrollOnGrab(pane, autoScroll=null){
   };  
 
   
-  pane.onmousedown = function(e){
+  pane.onpointerdown = function(e){
+    console.log(e);
     if(autoScroll != null){
       pause = true;
     }
@@ -431,8 +432,8 @@ function scrollOnGrab(pane, autoScroll=null){
       y: e.clientY,
   };
     pane.style.cursor = 'grab';
-    pane.addEventListener('mousemove', mouseMoveHandler);
-    pane.addEventListener('mouseup', mouseUpHandler);    
+    pane.addEventListener('pointermove', mouseMoveHandler);
+    pane.addEventListener('pointerup', mouseUpHandler);    
   }
   const mouseMoveHandler = function (e) {
       // How far the mouse has been moved
@@ -445,43 +446,8 @@ function scrollOnGrab(pane, autoScroll=null){
   };  
   const mouseUpHandler = function () {
     pause = false;
-    pane.removeEventListener('mousemove', mouseMoveHandler);
-    pane.removeEventListener('mouseup', mouseUpHandler);
-
-    pane.style.cursor = 'auto';
-    pane.style.removeProperty('user-select');
-  };   
-
-  pane.ontouchstart = function(e){
-    console.log("touchevent=" + e);
-    if(autoScroll != null){
-      pause = true;
-    }
-    pos = {
-      // The current scroll
-      left: pane.scrollLeft,
-      top: pane.scrollTop,
-      // Get the current mouse position
-      x: e.changedTouches[0].pageX,
-      y: e.changedTouches[0].pageY,
-  };
-    pane.style.cursor = 'grab';
-    pane.addEventListener('touchmove', touchMoveHandler);
-    pane.addEventListener('touchend', touchUpHandler);    
-  }
-  const touchMoveHandler = function (e) {
-      // How far the mouse has been moved
-      const dx = e.changedTouches[0].pageX - pos.x;
-      const dy = e.changedTouches[0].pagey - pos.y;
-  
-      // Scroll the element
-      pane.scrollTop = pos.top - dy;
-      pane.scrollLeft = pos.left - dx;
-  };  
-  const touchUpHandler = function () {
-    pause = false;
-    pane.removeEventListener('touchmove', touchMoveHandler);
-    pane.removeEventListener('touchend', touchUpHandler);
+    pane.removeEventListener('pointermove', mouseMoveHandler);
+    pane.removeEventListener('pointerup', mouseUpHandler);
 
     pane.style.cursor = 'auto';
     pane.style.removeProperty('user-select');
