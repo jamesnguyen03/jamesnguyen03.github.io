@@ -30,7 +30,6 @@ window.onscroll = function(){
 /**Portfolio Swap Functions */
 let mktgBtn = document.querySelector("#marketing-btn");
 let cscBtn = document.querySelector("#compsci-btn");
-let video = document.querySelector("video");
 let videoContainer = document.querySelector(".vid-container");
 let source = document.querySelector("source");
 let mainOverlay = document.querySelector(".main-overlay");
@@ -53,16 +52,14 @@ let projectMktgHeads = document.querySelectorAll(".marketing > .project-head");
 let cscProject = document.querySelector(".project-wrapper.compsci");
 let mktgProject = document.querySelector(".project-wrapper.marketing");
 let imgWindow = document.querySelector(".window");
+let giffy = document.querySelector(".gif");
 
 mktgBtn.onclick = function(){
   if(portfolioType != 1){
     portfolioType = 1;
 
+    giffy.style.backgroundImage = "url(ImageAssets/SpherePurple.gif)";
     imgWindow.style.background = "#8935af";
-    video.pause();
-    source.setAttribute("src", "ImageAssets/SpherePurple.mp4");
-    video.load();
-    video.play();
     videoContainer.style.background = `linear-gradient(to top left,
       rgba(107, 5, 133, 0.521) 0%,
       rgba(0, 0, 0, 0.836) calc(50% - 0.8px),
@@ -127,12 +124,9 @@ mktgBtn.onclick = function(){
 cscBtn.onclick = function(){
   if(portfolioType != 0){
     portfolioType = 0;
-
+    
+    giffy.style.backgroundImage = "url(ImageAssets/SphereOrange.gif)";
     imgWindow.style.background = "#e6c251";
-    video.pause();
-    source.setAttribute("src", "ImageAssets/SphereOrange.mp4");
-    video.load();
-    video.play();
     videoContainer.style.background = `linear-gradient(to top left,
       rgba(192, 134, 25, 0.521) 0%,
       rgba(0, 0, 0, 0.836) calc(50% - 0.8px),

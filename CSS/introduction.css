@@ -11,7 +11,7 @@
 }
 /** Styling for the Introduction Block **/
 .name-title{
-    margin-top: 6px;
+    margin-top: 15px;
     margin-bottom: 6px;
     color: white;
 }
@@ -116,12 +116,6 @@
         rgba(0,0,0,1) 50%,
         rgba(0,0,0,0) calc(50% + 0.8px),
         rgba(0,0,0,0) 100%);    
-}
-video{
-    width: 85%;
-}
-video::-webkit-media-controls {
-    display: none;
 }
 .gif{
     width: 85%;
