@@ -146,10 +146,39 @@
     color: rgb(255, 255, 255);
     display: none;
 }
-.java{
+.inset > .image-container{
     background-size: cover;
-    background-position: center;
+    background-position: center;   
+}
+.kickscookout{
+    background-image: url(../ImageAssets/kickscookout.png);
+}
+.kickscookout-preview{
+    background-image: url(../ImageAssets/kickscookout2.png);
+}
+.java{
     background-image: url(../ImageAssets/java.png);
+}
+.javascript{
+    background-image: url(../ImageAssets/javascript.png);
+}
+.sql{
+    background-image: url(../ImageAssets/sql.png);   
+}
+.html{
+    background-image: url(../ImageAssets/html5.png);   
+}
+.css{
+    background-image: url(../ImageAssets/css.png);  
+}
+.api{
+    background-image: url(../ImageAssets/api.png);   
+}
+.collage0{
+    background-image: url(../ImageAssets/collage.png);   
+}
+.visualstudio{
+    background-image: url(../ImageAssets/visualstudio.png);   
 }
 
 @media only screen and (max-width: 700px) {
