@@ -419,7 +419,6 @@ function scrollOnGrab(pane, autoScroll=null){
 
   
   pane.onpointerdown = function(e){
-    console.log(e);
     if(autoScroll != null){
       pause = true;
     }

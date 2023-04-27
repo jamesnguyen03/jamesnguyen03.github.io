@@ -65,6 +65,9 @@
     transition: 0.5s;
 }
 
+.rotating-traits{
+    margin-bottom: 5px;
+}
 /** For rotating traits text **/
 .trait-list{
     display: inline;
