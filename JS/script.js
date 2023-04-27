@@ -453,6 +453,7 @@ function scrollOnGrab(pane, autoScroll=null){
   };   
 
   pane.ontouchstart = function(e){
+    console.log("dude we here");
     if(autoScroll != null){
       pause = true;
     }
@@ -465,8 +466,8 @@ function scrollOnGrab(pane, autoScroll=null){
       y: e.clientY,
   };
     pane.style.cursor = 'grab';
-    pane.addEventListener('mousemove', touchMoveHandler);
-    pane.addEventListener('mouseup', touchUpHandler);    
+    pane.addEventListener('touchmove', touchMoveHandler);
+    pane.addEventListener('touchend', touchUpHandler);    
   }
   const touchMoveHandler = function (e) {
       // How far the mouse has been moved
@@ -479,8 +480,8 @@ function scrollOnGrab(pane, autoScroll=null){
   };  
   const touchUpHandler = function () {
     pause = false;
-    pane.removeEventListener('mousemove', touchMoveHandler);
-    pane.removeEventListener('mouseup', touchUpHandler);
+    pane.removeEventListener('touchmove', touchMoveHandler);
+    pane.removeEventListener('touchend', touchUpHandler);
 
     pane.style.cursor = 'auto';
     pane.style.removeProperty('user-select');
