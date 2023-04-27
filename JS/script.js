@@ -52,11 +52,13 @@ let projectMktgScenes = document.querySelectorAll(".marketing > .project-body > 
 let projectMktgHeads = document.querySelectorAll(".marketing > .project-head");
 let cscProject = document.querySelector(".project-wrapper.compsci");
 let mktgProject = document.querySelector(".project-wrapper.marketing");
+let imgWindow = document.querySelector(".window");
 
 mktgBtn.onclick = function(){
   if(portfolioType != 1){
     portfolioType = 1;
 
+    imgWindow.style.background = "#8935af";
     video.pause();
     source.setAttribute("src", "ImageAssets/SpherePurple.mp4");
     video.load();
@@ -125,6 +127,8 @@ mktgBtn.onclick = function(){
 cscBtn.onclick = function(){
   if(portfolioType != 0){
     portfolioType = 0;
+
+    imgWindow.style.background = "#e6c251";
     video.pause();
     source.setAttribute("src", "ImageAssets/SphereOrange.mp4");
     video.load();
