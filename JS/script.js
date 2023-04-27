@@ -417,6 +417,7 @@ function scrollOnGrab(pane, autoScroll=null){
     y: 0,
   };  
 
+  
   pane.onmousedown = function(e){
     if(autoScroll != null){
       pause = true;
@@ -446,6 +447,40 @@ function scrollOnGrab(pane, autoScroll=null){
     pause = false;
     pane.removeEventListener('mousemove', mouseMoveHandler);
     pane.removeEventListener('mouseup', mouseUpHandler);
+
+    pane.style.cursor = 'auto';
+    pane.style.removeProperty('user-select');
+  };   
+
+  pane.ontouchstart = function(e){
+    if(autoScroll != null){
+      pause = true;
+    }
+    pos = {
+      // The current scroll
+      left: pane.scrollLeft,
+      top: pane.scrollTop,
+      // Get the current mouse position
+      x: e.clientX,
+      y: e.clientY,
+  };
+    pane.style.cursor = 'grab';
+    pane.addEventListener('mousemove', touchMoveHandler);
+    pane.addEventListener('mouseup', touchUpHandler);    
+  }
+  const touchMoveHandler = function (e) {
+      // How far the mouse has been moved
+      const dx = e.clientX - pos.x;
+      const dy = e.clientY - pos.y;
+  
+      // Scroll the element
+      pane.scrollTop = pos.top - dy;
+      pane.scrollLeft = pos.left - dx;
+  };  
+  const touchUpHandler = function () {
+    pause = false;
+    pane.removeEventListener('mousemove', touchMoveHandler);
+    pane.removeEventListener('mouseup', touchUpHandler);
 
     pane.style.cursor = 'auto';
     pane.style.removeProperty('user-select');
