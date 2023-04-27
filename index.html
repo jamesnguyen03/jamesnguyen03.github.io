@@ -1,4 +1,3 @@
-
 <!--Theme: hello-->
 <!DOCTYPE html>
 <html>
@@ -6,10 +5,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>James Nguyen's Online Portfolio</title>
+        <link rel="shortcut icon" type="image/x-icon" href="ImageAssets/jvn.ico" />
         <!--Style-->
         <link rel="stylesheet" href="CSS/style.css">
-        <!--Swiper-->
-        <link rel="stylesheet" href="CSS/swiper-bundle.min.css">    
         <!--Introduction CSS-->
         <link rel="stylesheet" href="CSS/introduction.css">
         <!--Skills CSS-->
@@ -18,6 +16,8 @@
         <link rel="stylesheet" href="CSS/projects.css">     
         <!--Work CSS-->
         <link rel="stylesheet" href="CSS/work.css">           
+        <!--Alert CSS-->
+        <link rel="stylesheet" href="CSS/alert.css">           
         <div class="navbar">
             <div class="drop-menu open" hidden>
                 <img>
@@ -32,9 +32,9 @@
                     <li class="nb nav-option"><a href="#work" class="scroll-option"><div class="animate bounce nav-item"><h4>Work</h4></div></a></li>
                 </ul>
                 <ul class="social-icons">
-                    <li class="nb nav-option"><img class="animate spin" src="ImageAssets/linkedin.png" alt="LinkedIn"></li>
-                    <li class="nb nav-option"><img class="animate spin" src="ImageAssets/github.png" alt="GitHub"></li>
-                    <li class="nb nav-option"><img class="animate spin" src="ImageAssets/email.png" alt="Email"></li>   
+                    <a href="http://linkedin.com/in/jamesnguyen003" target="_blank"><li class="nb nav-option"><img class="animate spin" src="ImageAssets/linkedin.png" alt="LinkedIn"></li></a>
+                    <a href="https://github.com/jamesnguyen03" target="_blank"><li class="nb nav-option"><img class="animate spin" src="ImageAssets/github.png" alt="GitHub"></li></a>
+                    <a href="mailto: jamesnguyen99@hotmail.com"><li class="nb nav-option"><img class="animate spin" src="ImageAssets/email.png" alt="Email"></li></a>
                 </ul>       
                 <button class="jiggle game-btn"><span class="btn-text">Interactive Resume</span></button>                
             </div>
@@ -45,6 +45,19 @@
     <body>    
         <main>
             <div class="main-overlay"></div>
+            <div class="social-alert">
+                <div class="social-container">
+                    <h4 class="white">Connect with me on Social Networks!</h4>
+                    <div>
+                        <ul class="social-icons">
+                            <a href="http://linkedin.com/in/jamesnguyen003" target="_blank"><li class="nb nav-option"><img class="animate spin" src="ImageAssets/linkedin.png" alt="LinkedIn"></li></a>
+                            <a href="https://github.com/jamesnguyen03" target="_blank"><li class="nb nav-option"><img class="animate spin" src="ImageAssets/github.png" alt="GitHub"></li></a>
+                            <a href="mailto: jamesnguyen99@hotmail.com"><li class="nb nav-option"><img class="animate spin" src="ImageAssets/email.png" alt="Email"></li></a>
+                        </ul>  
+                    </div>
+                </div>
+                <button class="alert-close grayed">Close</button>
+            </div>
             <div class="intro-block" id="intro">
                 <div class="intro-left">
                     <div class="intro-container">
@@ -360,7 +373,7 @@
                     <p id="project-intro">Have a peek at some of my independent programming projects!</p>
                     <ul class="project-list">
                         <li class="nb"><div class="selection-overlay" id="selection-overlay"></div></li>
-                        <li class="nb project-selection"><span class="project-title">Web Automation Bots</span></li>
+                        <li class="nb project-selection"><span class="project-title">Web Automation</span></li>
                         <li class="nb project-selection"><span class="project-title">Online Portfolio</span></li>
                     </ul>
                     <div class="project-head">

@@ -80,6 +80,7 @@
     position: absolute;
     display: flex;
     opacity: 0;
+    z-index: -1;
 }
 
 .trait .letter {
@@ -120,7 +121,6 @@
 .gif{
     width: 85%;
     aspect-ratio: 1/1;
-    background-color: white;
     background-image: url("../ImageAssets/SphereOrange.gif");
     background-size: cover;
 }

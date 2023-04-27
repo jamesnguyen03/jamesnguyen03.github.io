@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 .project-wrapper.marketing{
     display: none;
@@ -12,6 +13,7 @@
 #project-title, #project-intro{
     margin: 5px;
 }
+
 #project-title{
     margin-top: 30px;
 }

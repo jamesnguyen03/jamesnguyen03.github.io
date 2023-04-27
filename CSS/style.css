@@ -11,7 +11,7 @@ h1, h2, h3{
     -webkit-text-fill-color: transparent;        
 }
 
-p{
+p, li, h4{
     font-family: sans-serif;
     color: white;
     line-height: 25px;
@@ -122,8 +122,7 @@ body{
     font-size: 14px;
 }
 .social-icons, .jump-links{
-    padding: 0px;
-    margin-left: 20px;
+    padding: 0px 5px;
 }
 .nav-option{
     margin-left: 5px;
@@ -218,7 +217,7 @@ body{
 
 /**Connect Buttons*/
 .connect{
-    padding: 0px 0px;
+    padding: 5px 5px;
     color: #e6c251;
     background: transparent;
     border: none;

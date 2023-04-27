@@ -27,12 +27,33 @@ window.onscroll = function(){
     top.style.opacity = "0";
   }
 }
+
+let mainOverlay = document.querySelector(".main-overlay");
+
+let alertBox = document.querySelector(".social-alert");
+alertBox.style.display = "none";
+let alertClose = document.querySelector(".alert-close");
+alertClose.onclick = function(){
+  let body = document.querySelector("body");
+  alertBox.style.display = "none";
+  mainOverlay.style.display = "none";
+
+}
+let connectBtns = document.querySelectorAll(".connect-container");
+connectBtns.forEach((btn) =>{
+  btn.onclick = function(){
+    let body = document.querySelector("body");
+    console.log("clicked alert");
+    alertBox.style.display = "flex";
+    mainOverlay.style.display = "flex";
+  }
+});
+
 /**Portfolio Swap Functions */
 let mktgBtn = document.querySelector("#marketing-btn");
 let cscBtn = document.querySelector("#compsci-btn");
 let videoContainer = document.querySelector(".vid-container");
 let source = document.querySelector("source");
-let mainOverlay = document.querySelector(".main-overlay");
 let projectOverlay = document.querySelector(".selection-overlay");
 let workOverlay = document.querySelector(".work-overlay");
 let scrollUp = document.querySelector(".toTop");
@@ -459,6 +480,9 @@ function initMenu(){
 
   overlay.onclick = function(){
     mobileNavClose();
+    try {
+      alertBox.style.display = "none";
+    } catch (error) { }
   }
 
   open.onclick = function(){
