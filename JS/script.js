@@ -5,6 +5,7 @@ let pause = false;
 let isMobile = window.innerWidth <= 800 ? true : false;
 let portfolioType = 0; //0 for programming, 1 for marketing
 let currProjectIdx = 0;
+let pauseRotate = false;
 
 initTraits();
 initSkills();
@@ -230,6 +231,9 @@ function initTraits(){
   traits[traitIdx].style.opacity = "1";
 
   let rotateText = () => {
+    if(pauseRotate){
+      return;
+    }
     let currentWord = traits[traitIdx];
     let nextWord = traitIdx === maxTraitIdx ? traits[0] : traits[traitIdx + 1];
   
@@ -487,6 +491,7 @@ function initMenu(){
 
   open.onclick = function(){
     mobileNavOpen();
+
   }
   close.onclick = function(){
     mobileNavClose();
@@ -502,6 +507,7 @@ function mobileNavOpen(){
   let navigation = document.querySelector(".nav-container");
   let body = document.querySelector("body");
   let overlay = document.querySelector(".main-overlay");  
+  pauseRotate = true;
     
   navigation.style.left = "0px";
   body.style.overflow = "hidden";
@@ -511,6 +517,7 @@ function mobileNavClose(){
   let navigation = document.querySelector(".nav-container");
   let body = document.querySelector("body");
   let overlay = document.querySelector(".main-overlay");  
+  pauseRotate = false;
 
   navigation.style.left = "-450px";
   body.style.overflow = "visible";
