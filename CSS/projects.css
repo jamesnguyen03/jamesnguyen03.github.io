@@ -27,6 +27,7 @@
 .project-head{
     text-align: center;
     display: none;
+    width: 80%;
 }
 .project-title{
     cursor: pointer;
@@ -182,7 +183,30 @@
 .visualstudio{
     background-image: url(../ImageAssets/visualstudio.png);   
 }
-
+.photoshop{
+    background-image: url(../ImageAssets/photoshop.png);   
+}
+.illustrator{
+    background-image: url(../ImageAssets/illustrator.png);   
+}
+.davinci{
+    background-image: url(../ImageAssets/davinci.png);   
+}
+.collage1{
+    background-image: url(../ImageAssets/collage1.png);   
+}
+.marketplaces{
+    background-image: url(../ImageAssets/marketplaces.png);   
+}
+.fcg{
+    background-image: url(../ImageAssets/fcg.png);   
+}
+.abn{
+    background-image: url(../ImageAssets/abn.png);   
+}
+.flickboards{
+    background-image: url(../ImageAssets/flickboards.png);   
+}
 @media only screen and (max-width: 700px) {
     .project-scene{
         display: none;

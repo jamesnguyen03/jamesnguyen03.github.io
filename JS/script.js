@@ -232,6 +232,7 @@ function initTraits(){
 
   let rotateText = () => {
     if(pauseRotate){
+      console.log("paused");
       return;
     }
     let currentWord = traits[traitIdx];
