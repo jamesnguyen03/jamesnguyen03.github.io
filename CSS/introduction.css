@@ -60,8 +60,8 @@
     transition: 0.5s;
 }
 #marketing-btn{
-    border-color: #e6c251;
-    color: #e6c251;
+    border-color: #8935af;
+    color: #8935af;
     transition: 0.5s;
 }
 
@@ -106,22 +106,22 @@
     align-items: center;    
     background: 
     linear-gradient(to top left,
-        rgba(192, 134, 25, 0.521) 0%,
-        rgba(0, 0, 0, 0.836) calc(50% - 0.8px),
-        rgb(0, 0, 0) 50%,
-        rgba(0, 0, 0, 0) calc(50% + 0.8px),
-        rgba(192, 134, 25, 0.521) 100%),
-    linear-gradient(to top right,
-        rgba(0,0,0,0) 0%,
-        rgba(0,0,0,0) calc(50% - 0.8px),
-        rgba(0,0,0,1) 50%,
-        rgba(0,0,0,0) calc(50% + 0.8px),
-        rgba(0,0,0,0) 100%);    
+      rgba(107, 5, 133, 0.521) 0%,
+      rgba(0, 0, 0, 0.836) calc(50% - 0.8px),
+      rgb(0, 0, 0) 50%,
+      rgba(0, 0, 0, 0) calc(50% + 0.8px),
+      rgba(107, 5, 133, 0.521) 100%),
+  linear-gradient(to top right,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0) calc(50% - 0.8px),
+      rgba(0,0,0,1) 50%,
+      rgba(0,0,0,0) calc(50% + 0.8px),
+      rgba(0,0,0,0) 100%); 
 }
 .gif{
     width: 85%;
     aspect-ratio: 1/1;
-    background-image: url("../ImageAssets/SphereOrange.gif");
+    background-image: url("../ImageAssets/SpherePurple.gif");
     background-size: cover;
 }
 .window{
@@ -132,7 +132,7 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    background: #e6c251;
+    background: #8935af;
 }
 .screen{
     position: absolute;

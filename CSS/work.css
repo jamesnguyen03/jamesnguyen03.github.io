@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    background-image: url("../ImageAssets/OrangeWave2.svg");
+    background-image: url("../ImageAssets/PurpleWave2.svg");
     background-size: cover;
 
 }
@@ -20,7 +20,7 @@
 }
 .work-overlay{
     position: absolute;
-    background-color: #e6c251;
+    background-color: #8935af;
     transition-duration:0.6s;
     transition-timing-function: cubic-bezier(0.68, -0.30, 0.265, 1.30);      
 }

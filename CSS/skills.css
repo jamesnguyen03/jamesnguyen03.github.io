@@ -1,7 +1,7 @@
 .skills{
     display: flex;
     justify-content: center;
-    background-image: url("../ImageAssets/OrangeWave1.svg");
+    background-image: url("../ImageAssets/PurpleWave1.svg");
     background-size: cover;
 }
 .skills-background{
@@ -93,6 +93,9 @@
 }
 .connect.purple{ 
     color: #ab4fd6;
+}
+.connect.orange{ 
+    color: #e6c251;
 }
 .slide-wrapper{
     display: flex;

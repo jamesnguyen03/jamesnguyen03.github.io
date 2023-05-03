@@ -76,9 +76,9 @@ let mktgProject = document.querySelector(".project-wrapper.marketing");
 let imgWindow = document.querySelector(".window");
 let giffy = document.querySelector(".gif");
 
-mktgBtn.onclick = function(){
-  if(portfolioType != 1){
-    portfolioType = 1;
+cscBtn.onclick = function(){
+  if(portfolioType != 0){
+    portfolioType = 0;
 
     giffy.style.backgroundImage = "url(ImageAssets/SpherePurple.gif)";
     imgWindow.style.background = "#8935af";
@@ -95,12 +95,12 @@ mktgBtn.onclick = function(){
       rgba(0,0,0,0) calc(50% + 0.8px),
       rgba(0,0,0,0) 100%)`;
 
-    mktgProject.style.display = "flex";
-    cscProject.style.display = "none";
-    skillMktg.style.display = "flex";
-    skillCsc.style.display = "none";
+    mktgProject.style.display = "none";
+    cscProject.style.display = "flex";
+    skillMktg.style.display = "none";
+    skillCsc.style.display = "flex";
 
-    resizeOverlay(projectCscHeads.length);
+    resizeOverlay(0);
     workOverlay.style.background = "#8935af";
     mainOverlay.style.background = "rgba(136, 53, 175, 0.286)"
     scrollUp.style.background = "#8935af";
@@ -110,8 +110,8 @@ mktgBtn.onclick = function(){
     logo.setAttribute("src", "ImageAssets/WhitePurple.svg");
     gameBtn.style.color = "#8935af";
     gameBtn.style.borderColor = "#8935af";
-    mktgBtn.style.color = "white";
-    mktgBtn.style.borderColor = "white";
+    cscBtn.style.color = "white";
+    cscBtn.style.borderColor = "white";
     
 
     function makeTextPurple(elem){
@@ -130,22 +130,22 @@ mktgBtn.onclick = function(){
       makeTextPurple(elem);
     });    
 
-    projectMktgScenes.forEach((elem) => {
+    projectCscScenes.forEach((elem) => {
       elem.style.display = "none";
     });
-    projectMktgHeads.forEach((elem) =>{
+    projectCscHeads.forEach((elem) =>{
       elem.style.display = "none";
     });
-    projectMktgScenes[0].style.display = "flex";
-    projectMktgHeads[0].style.display = "block";
+    projectCscScenes[0].style.display = "flex";
+    projectCscHeads[0].style.display = "block";
 
-    cscBtn.style.color = "#8935af";
-    cscBtn.style.borderColor = "#8935af";
+    mktgBtn.style.color = "#8935af";
+    mktgBtn.style.borderColor = "#8935af";
   }
 }
-cscBtn.onclick = function(){
-  if(portfolioType != 0){
-    portfolioType = 0;
+mktgBtn.onclick = function(){
+  if(portfolioType != 1){
+    portfolioType = 1;
     
     giffy.style.backgroundImage = "url(ImageAssets/SphereOrange.gif)";
     imgWindow.style.background = "#e6c251";
@@ -162,10 +162,10 @@ cscBtn.onclick = function(){
       rgba(0,0,0,0) calc(50% + 0.8px),
       rgba(0,0,0,0) 100%)`;
 
-    mktgProject.style.display = "none";
-    cscProject.style.display = "flex";      
-    skillMktg.style.display = "none";
-    skillCsc.style.display = "flex";      
+    mktgProject.style.display = "flex";
+    cscProject.style.display = "none";      
+    skillMktg.style.display = "flex";
+    skillCsc.style.display = "none";      
 
     workOverlay.style.background = "#e6c251";
     mainOverlay.style.background = "rgba(71, 56, 4, 0.342)"
@@ -176,8 +176,8 @@ cscBtn.onclick = function(){
     logo.setAttribute("src", "ImageAssets/WhiteOrange.svg");
     gameBtn.style.color = "#e6c251";
     gameBtn.style.borderColor = "#e6c251";
-    cscBtn.style.color = "white";
-    cscBtn.style.borderColor = "white";
+    mktgBtn.style.color = "white";
+    mktgBtn.style.borderColor = "white";
 
     
 
@@ -197,18 +197,18 @@ cscBtn.onclick = function(){
       makeTextOrange(elem);
     }); 
 
-    resizeOverlay(0);
-    projectCscScenes.forEach((elem) => {
+    resizeOverlay(projectCscHeads.length);
+    projectMktgScenes.forEach((elem) => {
       elem.style.display = "none";
     });
-    projectCscHeads.forEach((elem) =>{
+    projectMktgHeads.forEach((elem) =>{
       elem.style.display = "none";
     });
-    projectCscScenes[0].style.display = "flex";
-    projectCscHeads[0].style.display = "block";
+    projectMktgScenes[0].style.display = "flex";
+    projectMktgHeads[0].style.display = "block";
 
-    mktgBtn.style.color = "#e6c251";
-    mktgBtn.style.borderColor = "#e6c251";
+    cscBtn.style.color = "#e6c251";
+    cscBtn.style.borderColor = "#e6c251";
   }
 }
 
@@ -288,13 +288,13 @@ function initSkills(){
   let inView = new Array(levelWrappers.length);
   for(let i = 0; i < levelWrappers.length; i++) inView[i] = false;
 
-  let circleOrange = document.querySelectorAll(".compsci .outer-circle");
+  let circleOrange = document.querySelectorAll(".marketing .outer-circle");
   circleOrange.forEach((elem) =>{
     let skillLevel = elem.querySelector(".skill-level");
     let progressValue = skillLevel.getAttribute("level");
     elem.style.background = `conic-gradient(#f7cb3b ${progressValue * 3.6}deg, #313131 0deg)`;
     if(progressValue < 60){
-      skillLevel.innerHTML = "Beginner";
+      skillLevel.innerHTML = "Novice";
     }else if(progressValue < 75){
       skillLevel.innerHTML = "Intermediate"
     }else if(progressValue < 90){
@@ -304,13 +304,13 @@ function initSkills(){
     }
   });
 
-  let circlePurple = document.querySelectorAll(".marketing .outer-circle");
+  let circlePurple = document.querySelectorAll(".compsci .outer-circle");
   circlePurple.forEach((elem) =>{
     let skillLevel = elem.querySelector(".skill-level");
     let progressValue = skillLevel.getAttribute("level");
     elem.style.background = `conic-gradient(#8935af ${progressValue * 3.6}deg, #313131 0deg)`;
     if(progressValue < 60){
-      skillLevel.innerHTML = "Beginner";
+      skillLevel.innerHTML = "Novice";
     }else if(progressValue < 75){
       skillLevel.innerHTML = "Intermediate"
     }else if(progressValue < 90){
