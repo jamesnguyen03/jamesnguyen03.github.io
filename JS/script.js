@@ -61,7 +61,7 @@ let scrollUp = document.querySelector(".toTop");
 let skillsBackground = document.querySelector(".skills");
 let workBackground = document.querySelector(".work");
 let logo = document.querySelector(".personal-logo");
-let gameBtn = document.querySelector(".game-btn");
+let resumeBtn = document.querySelector(".r-btn");
 let h1s = document.querySelectorAll("h1");
 let h2s = document.querySelectorAll("h2");
 let h3s = document.querySelectorAll("h3");
@@ -108,8 +108,8 @@ cscBtn.onclick = function(){
     skillsBackground.style.backgroundImage = "url(ImageAssets/PurpleWave1.svg)";
     workBackground.style.backgroundImage = "url(ImageAssets/PurpleWave2.svg)";
     logo.setAttribute("src", "ImageAssets/WhitePurple.svg");
-    gameBtn.style.color = "#8935af";
-    gameBtn.style.borderColor = "#8935af";
+    resumeBtn.style.color = "#8935af";
+    resumeBtn.style.borderColor = "#8935af";
     cscBtn.style.color = "white";
     cscBtn.style.borderColor = "white";
     
@@ -174,8 +174,8 @@ mktgBtn.onclick = function(){
     skillsBackground.style.backgroundImage = "url(ImageAssets/OrangeWave1.svg)";
     workBackground.style.backgroundImage = "url(ImageAssets/OrangeWave2.svg)";
     logo.setAttribute("src", "ImageAssets/WhiteOrange.svg");
-    gameBtn.style.color = "#e6c251";
-    gameBtn.style.borderColor = "#e6c251";
+    resumeBtn.style.color = "#e6c251";
+    resumeBtn.style.borderColor = "#e6c251";
     mktgBtn.style.color = "white";
     mktgBtn.style.borderColor = "white";
 
@@ -340,7 +340,7 @@ function initProjectStart(){
 
   /** Sets the Project Selector at the First Element **/
   let parentRect = projectTitles[currProjectIdx].parentElement.getBoundingClientRect();
-  let selections = document.querySelectorAll("#selection-overlay");
+  let selections = document.querySelectorAll(".selection-overlay");
   selections[0].style.height = parentRect.height + "px";
   selections[0].style.width = parentRect.width + "px";
   selections[0].style.left = "0px";
@@ -367,7 +367,7 @@ function initProjectStart(){
       let x = parent.offsetLeft;
 
       let container = parent.parentElement.parentElement;
-      let selection = container.querySelector("#selection-overlay");
+      let selection = container.querySelector(".selection-overlay");
       selection.style.height = h + "px";
       selection.style.width = w + "px";
       selection.style.left = x + "px";
@@ -383,7 +383,7 @@ function initProjectStart(){
     let x = parent.offsetLeft;
 
     let container = parent.parentElement.parentElement;
-    let selection = container.querySelector("#selection-overlay");
+    let selection = container.querySelector(".selection-overlay");
     selection.style.height = h + "px";
     selection.style.width = w + "px";
     selection.style.left = x + "px";  

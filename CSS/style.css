@@ -74,14 +74,14 @@ body{
 .nav-container{
     display: inline;
 }
- .nav-option > img, .game-btn{
+ .nav-option > img, .r-btn{
     cursor: pointer;
 }
 .nav-item{
     display: inline-flex;
     height: 100%;
 }
-.nav-option, .personal-logo, .jump-links, .social-icons, .game-btn{
+.nav-option, .personal-logo, .jump-links, .social-icons, .r-btn{
     display: inline;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -101,7 +101,7 @@ body{
     margin-bottom: 40px;
 }
 
-.game-btn{
+.r-btn{
     height: 50px;
     margin: 15px 10px 0px 10px;
     border: solid 2px;
@@ -153,7 +153,7 @@ body{
         width: 100%;
         border-bottom: solid 1px;
     }
-    .game-btn{
+    .r-btn{
         width: 80%;
         margin: 5%;
     }

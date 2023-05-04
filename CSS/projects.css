@@ -10,7 +10,7 @@
 .project-wrapper.marketing{
     display: none;
 }
-#project-title, #project-intro{
+.project-intro{
     margin: 5px;
 }
 
@@ -65,7 +65,7 @@
     min-width: 300px;
     margin: 20px;
 }
-#project-break{
+.project-break{
     width: 50%;
 }
 .project-list{
