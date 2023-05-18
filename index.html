@@ -2,6 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KYQRTT3Z8Y"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-KYQRTT3Z8Y');
+        </script>        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>James Vincent Nguyen</title>
@@ -70,7 +79,7 @@
                         <h1 class="name-title">Hello, I'm James!</h1>
                         <h4 class="degrees">Software Developer & Digital Marketer</h4>
                         <p>I am passionate about helping develop creative solutions that work! Whether it be a creative marketing campaign or a logical programming problem, I enjoy participating in projects that create value.
-                            I aspire to become a <b>Full Stack Developer</b> that has the knowledge and skill to tackle any challenge.
+                            I am working hard to learn several different technologies so that I can become a well-rounded <b>Full Stack Developer</b> that can tackle any challenge.
                         </p>
                         <p class="grayed">Here's some non-work related details about me. I really like the idea of personal growth and getting out of your comfort zone. Traveling is one of my favorite ways to go beyond what's comfortable. I really enjoy experiencing new things, and traveling lets me do that. I also enjoy learning
                         a little bit about everything that piques my interest. Finally, I also like collecting vintage games, trading cards, and limited edition sneakers. </p>
@@ -371,7 +380,8 @@
                     <ul class="project-list">
                         <li class="nb"><div class="selection-overlay"></div></li>
                         <li class="nb project-selection"><span class="project-title">Web Automation</span></li>
-                        <li class="nb project-selection"><span class="project-title">Online Portfolio</span></li>
+                        <li class="nb project-selection"><span class="project-title">Personal Portfolio</span></li>
+                        <li class="nb project-selection"><span class="project-title">GitHub Interactive</span></li>
                     </ul>
                     <div class="project-head">
                         <h2 class="project-name">Web Automation Bots</h2>
@@ -380,7 +390,11 @@
                     <div class="project-head">
                         <h2 class="project-name">Personal Portfolio</h2>
                         <p class="project-desc">You're looking at it! I created this Portfolio Project to be the basis of my personal brand. It briefly introduces my aspirations, skills, and previous works.</p>
-                    </div>                       
+                    </div>    
+                    <div class="project-head">
+                        <h2 class="project-name">GitHub Interactive & API</h2>
+                        <p class="project-desc">I saw someone who had a playable Pokemon game on their GitHub profile! Markdown doesn't let users add JavaScript, so I developed and deployed an API to create a custom game for my own GitHub profile!</p>
+                    </div>                                           
                     <hr class="project-break">
                     <div class="project-body">
                         <div class="project-scene proj1">
@@ -507,7 +521,32 @@
                                     </div>
                                 </div>                        
                             </div>     
-                        </div>                                                                                                                                                             
+                        </div>    
+                        
+                        <div class="project-scene proj3">
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <div class="inset">
+                                        <div class="tab purple"><p>Read More</p></div>
+                                        <div class="overlay purple"><p>I used Python and Flask to write the API that would update my GitHub game frames. <br><br>I've made this project public
+                                            on my GitHub account so that others can use it!
+                                        </p></div>
+                                        <div class="image-container python-flask"></div>
+                                    </div>
+                                </div>                        
+                            </div>     
+                            <div class="project-card-wrapper">
+                                <div class="technology-card">
+                                    <div class="inset">
+                                        <div class="tab purple"><p>Read More</p></div>
+                                        <div class="overlay purple"><p>I deployed the web service on Google Cloud Platform using an Ubuntu F1-Micro Instance. I used GCP's SSH-in-browser tool to 
+                                            transfer the files from my local device onto the instance. Finally, I was able to deploy the app using gunicorn and nginx.
+                                        </p></div>
+                                        <div class="image-container gcp"></div>
+                                    </div>                                    
+                                </div>                        
+                            </div>  
+                        </div>                           
                     </div>
                 </div>
                 <div class="project-wrapper marketing">

@@ -210,6 +210,12 @@
 .flickboards{
     background-image: url(../ImageAssets/flickboards.png);   
 }
+.python-flask{
+    background-image: url(../ImageAssets/python-flask.png);   
+}
+.gcp{
+    background-image: url(../ImageAssets/gcp.png);   
+}
 @media only screen and (max-width: 700px) {
     .project-scene{
         display: none;
