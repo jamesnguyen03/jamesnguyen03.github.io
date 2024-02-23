@@ -264,7 +264,7 @@ function initSkills(){
   let levelWrappers = document.querySelectorAll(".level-wrapper");
 
   let scrollSpeed = 30;
-  let autoScroll = [initAutoScroll(0),initAutoScroll(1)];
+  //let autoScroll = [initAutoScroll(0),initAutoScroll(1)];
 
 /**
   function initAutoScroll(type){
@@ -398,12 +398,12 @@ function initProjectStart(){
   let projectScrolls = document.querySelectorAll(".project-scene");
   let mouseIsDown = false;
   let startX;
-  /**
+
   projectScrolls.forEach((pane) => {
     scrollOnGrab(pane);
 
   });
-  */
+
 }
 
 function initWorkStart(){
@@ -436,7 +436,7 @@ function initWorkStart(){
   });
 }
 
-/**
+
 function scrollOnGrab(pane, autoScroll=null){
   let mouseIsDown = false;
   let startX;
@@ -484,7 +484,7 @@ function scrollOnGrab(pane, autoScroll=null){
     pane.style.removeProperty('user-select');
   };   
 }
-*/
+
 
 function initMenu(){
   let mobileMenus = document.querySelectorAll(".drop-menu");
