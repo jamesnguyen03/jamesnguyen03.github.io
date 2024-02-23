@@ -1,6 +1,6 @@
 "use strict";
 let resizeOverlay; //initializing blank function
-let resizeScroll; //initializing blank function
+//let resizeScroll; //initializing blank function
 let pause = false;
 let isMobile = window.innerWidth <= 800 ? true : false;
 let portfolioType = 0; //0 for programming, 1 for marketing
@@ -8,7 +8,7 @@ let currProjectIdx = 0;
 let pauseRotate = false;
 
 initTraits();
-initSkills();
+//initSkills();
 initProjectStart();
 initWorkStart();
 initMenu();
@@ -17,7 +17,7 @@ initMenu();
 window.onresize = function(){
   isMobile = window.innerWidth <= 800 ? true : false;
   resizeOverlay(currProjectIdx);
-  resizeScroll();
+  //resizeScroll();
 }
 
 window.onscroll = function(){
@@ -58,15 +58,15 @@ let source = document.querySelector("source");
 let projectOverlay = document.querySelector(".selection-overlay");
 let workOverlay = document.querySelector(".work-overlay");
 let scrollUp = document.querySelector(".toTop");
-let skillsBackground = document.querySelector(".skills");
+//let skillsBackground = document.querySelector(".skills");
 let workBackground = document.querySelector(".work");
 let logo = document.querySelector(".personal-logo");
 let resumeBtn = document.querySelector(".r-btn");
 let h1s = document.querySelectorAll("h1");
 let h2s = document.querySelectorAll("h2");
 let h3s = document.querySelectorAll("h3");
-let skillMktg = document.querySelector(".skills-container.marketing");
-let skillCsc = document.querySelector(".skills-container.compsci");
+//let skillMktg = document.querySelector(".skills-container.marketing");
+//let skillCsc = document.querySelector(".skills-container.compsci");
 let projectCscScenes = document.querySelectorAll(".compsci > .project-body > .project-scene");
 let projectCscHeads = document.querySelectorAll(".compsci > .project-head");
 let projectMktgScenes = document.querySelectorAll(".marketing > .project-body > .project-scene");
@@ -97,19 +97,19 @@ cscBtn.onclick = function(){
 
     mktgProject.style.display = "none";
     cscProject.style.display = "flex";
-    skillMktg.style.display = "none";
-    skillCsc.style.display = "flex";
+    //skillMktg.style.display = "none";
+    //skillCsc.style.display = "flex";
 
     resizeOverlay(0);
     workOverlay.style.background = "#8935af";
     mainOverlay.style.background = "rgba(136, 53, 175, 0.286)"
     scrollUp.style.background = "#8935af";
     scrollUp.style.background = "linear-gradient(90deg, rgba(101,27,134,1) 0%, rgba(137,53,175,1) 44%, rgba(191,92,236,1) 100%)";
-    skillsBackground.style.backgroundImage = "url(ImageAssets/PurpleWave1.svg)";
+    //skillsBackground.style.backgroundImage = "url(ImageAssets/PurpleWave1.svg)";
     workBackground.style.backgroundImage = "url(ImageAssets/PurpleWave2.svg)";
     logo.setAttribute("src", "ImageAssets/WhitePurple.svg");
-    resumeBtn.style.color = "#8935af";
-    resumeBtn.style.borderColor = "#8935af";
+    //resumeBtn.style.color = "#8935af";
+    //resumeBtn.style.borderColor = "#8935af";
     cscBtn.style.color = "white";
     cscBtn.style.borderColor = "white";
     
@@ -164,18 +164,18 @@ mktgBtn.onclick = function(){
 
     mktgProject.style.display = "flex";
     cscProject.style.display = "none";      
-    skillMktg.style.display = "flex";
-    skillCsc.style.display = "none";      
+    //skillMktg.style.display = "flex";
+    //skillCsc.style.display = "none";
 
     workOverlay.style.background = "#e6c251";
     mainOverlay.style.background = "rgba(71, 56, 4, 0.342)"
     scrollUp.style.background = "#e6c251";
     scrollUp.style.background = "linear-gradient(90deg, rgba(145,127,54,1) 0%, rgba(191,158,48,1) 44%, rgba(230,194,81,1) 100%)"; 
-    skillsBackground.style.backgroundImage = "url(ImageAssets/OrangeWave1.svg)";
+    //skillsBackground.style.backgroundImage = "url(ImageAssets/OrangeWave1.svg)";
     workBackground.style.backgroundImage = "url(ImageAssets/OrangeWave2.svg)";
     logo.setAttribute("src", "ImageAssets/WhiteOrange.svg");
-    resumeBtn.style.color = "#e6c251";
-    resumeBtn.style.borderColor = "#e6c251";
+    //resumeBtn.style.color = "#e6c251";
+    //resumeBtn.style.borderColor = "#e6c251";
     mktgBtn.style.color = "white";
     mktgBtn.style.borderColor = "white";
 
@@ -265,10 +265,11 @@ function initSkills(){
 
   let scrollSpeed = 30;
   let autoScroll = [initAutoScroll(0),initAutoScroll(1)];
+
   function initAutoScroll(type){
     let reverse = false;
       let auto = setInterval(function(){
-        let skillScroll;
+        //let skillScroll;
         if(type == 0){
           skillScroll = cscScroll;
         }else{
@@ -320,18 +321,20 @@ function initSkills(){
     }
   });  
 
+/**
   resizeScroll = function(){
-    clearInterval(autoScroll[0]);
-    clearInterval(autoScroll[1]);
-    autoScroll = [initAutoScroll(0),initAutoScroll(1)];
+    //clearInterval(autoScroll[0]);
+    //clearInterval(autoScroll[1]);
+    //autoScroll = [initAutoScroll(0),initAutoScroll(1)];
   }
 
-  scrollOnGrab(cscScroll, autoScroll);
-  scrollOnGrab(mktgScroll, autoScroll);
-  pauseToScroll();
-}
+  //scrollOnGrab(cscScroll, autoScroll);
+  //scrollOnGrab(mktgScroll, autoScroll);
 
+  **/
+}
 function initProjectStart(){
+    pauseToScroll();
   /**intiializes the start states for items in the Project Block */
   let projectTitles = document.querySelectorAll(".project-title");
 

@@ -1,5 +1,5 @@
 .skills{
-    display: flex;
+    display: none;
     justify-content: center;
     background-image: url("../ImageAssets/PurpleWave1.svg");
     background-size: cover;
