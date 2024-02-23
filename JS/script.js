@@ -266,6 +266,7 @@ function initSkills(){
   let scrollSpeed = 30;
   let autoScroll = [initAutoScroll(0),initAutoScroll(1)];
 
+/**
   function initAutoScroll(type){
     let reverse = false;
       let auto = setInterval(function(){
@@ -286,6 +287,7 @@ function initSkills(){
       }, scrollSpeed);    
     return auto;
   }
+  */
   let inView = new Array(levelWrappers.length);
   for(let i = 0; i < levelWrappers.length; i++) inView[i] = false;
 
@@ -396,10 +398,12 @@ function initProjectStart(){
   let projectScrolls = document.querySelectorAll(".project-scene");
   let mouseIsDown = false;
   let startX;
+  /**
   projectScrolls.forEach((pane) => {
     scrollOnGrab(pane);
 
   });
+  */
 }
 
 function initWorkStart(){
@@ -432,6 +436,7 @@ function initWorkStart(){
   });
 }
 
+/**
 function scrollOnGrab(pane, autoScroll=null){
   let mouseIsDown = false;
   let startX;
@@ -479,6 +484,7 @@ function scrollOnGrab(pane, autoScroll=null){
     pane.style.removeProperty('user-select');
   };   
 }
+*/
 
 function initMenu(){
   let mobileMenus = document.querySelectorAll(".drop-menu");
